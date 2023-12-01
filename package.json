@@ -1,0 +1,36 @@
+{
+  "name": "southcla.ws",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "prepare": "panda codegen",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "@next/mdx": "^14.0.3",
+    "@types/mdx": "^2.0.10",
+    "date-fns": "^2.30.0",
+    "glob": "^10.3.10",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "remark-frontmatter": "^5.0.0",
+    "satori": "^0.10.11",
+    "yaml": "^2.3.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.19.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "typescript": "^5"
+  }
+}

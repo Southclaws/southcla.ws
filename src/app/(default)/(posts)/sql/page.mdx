@@ -1,0 +1,142 @@
+{/*
+title: The Stockholm Syndrome of SQL
+date: 2022-06-26T00:00:00Z
+*/}
+
+# The Stockholm Syndrome of SQL
+
+_Why Relational Databases Need a Diverse Competitive Ecosystem of Query Interfaces_
+
+> This is part 1 of a series analysing the relational database landscape and criticising the design of Structured Query Language. This article
+
+Our ecosystem of technology tools is modelled after a free market. We have many platforms, tooling and people competing to be the best. The best browser, the best language, the best text editor, the best terminal emulator, the best shell, the best line of text that appears above the bit where you type commands into the terminal. There's competition everywhere and that's great. It's great for the people who build infrastructure and products because better tools make their job easier. It's also great for the people using that infrastructure and those products because they get a better experience doing whatever they need to do with those things.
+
+A question I've asked myself, my mentors, my friends and colleagues is: what's the deal with databases and why is there no rich free market of competing ideas?
+
+I'm often met with responses such as:
+
+> SQL is *fine*.
+
+> Don't fix what ain't broken.
+
+> Everyone uses it, why try to change?
+
+Which is, honestly, odd. Considering this is the industry within which there are entire movements, almost religious in nature, around fixing and replacing old tools with new tools.
+
+Of course, asking these questions as a developer straight out of university was normal. The general vibe was that this bright-eyed-and-bushy-tailed desire to make everything perfect would soon disappear. But I'm now a senior engineer, I've built a ton of products and tools, from dev tools to consumer apps and I've written a huge amount of database-related code from simple queries to long chains of ORM method calls and all manner of multi-level joins, recursive spaghetti and the odd MongoDB aggregation. I've still got a lot to learn at this stage in my career, but I feel like I'm at a point where I can vocalise my thoughts on this gap in the market.
+
+## So let's talk about the _free market of software_.
+
+_just call me the trustbuster big data 🧑‍⚖️_
+
+TypeScript is an entire language backed by a trillion-dollar corporation with the sole purpose of reducing the likelihood of undefined is not a function popping up in error messages. This exists as a compile-to-JavaScript language, of which there are many! JavaScript is sort of a Rosetta's Stone of code.
+
+Deno was started by Ryan Dahl, who created Node.js, in an effort to provide a better platform to build applications using V8. Deno throws out backwards compatibility in an attempt to start fresh and "do things right". It has a decent following and looks somewhat promising. It uses normal TypeScript, compiles to JavaScript under the hood and executes on the V8 runtime. It's basically Node.js but with native TypeScript support and a different approach to dependency management.
+
+![the deno dino, because all good software products need a cute mascot](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74faa725-7660-49c2-8904-2cc3994ac03c_512x512.svg)
+
+
+LLVM and JVM both facilitate the existence of about 16 major languages (not including small side projects and non-commercial stuff) they are both low-ish level platforms that provide a runtime, optimisation and cross-platform usage. If you write a new programming language and it can be compiled with LLVM or JVM, your new language will run on basically any computer on the planet.
+
+There are three major web browsers currently on the market: Chrome, Firefox and Safari. They all have slightly different advantages. It can be frustrating for a developer sometimes to build websites and web experiences because of this but it's all for a net good: consumer choice, innovation and market competition. Safari introduced a way to check if the user prefers a dark colour scheme and shortly after it became standard across all browsers. Firefox created development tools and they are ubiquitous nowadays. Chrome pushed for WebAssembly and that... exists now, so that's cool I guess.
+
+You get the idea, there are examples of the market competition model all over this industry. Even though the vast majority of these products are often free to use, open source and accessible they are still treated as products and the teams building them still treat competing products as competition.
+
+## The Database Market
+
+_it's far less interesting, trust me_
+
+Pretty much every mainstream relational database out there uses some dialect of SQL. There are no mainstream relational databases that use any other method of interfacing with the data. Of the top 10 databases according to db-engines.com, 7 of them are relational and all of these use SQL.
+
+![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F382fb802-3ee5-4652-b099-76ad884c10de_1346x892.png)
+
+This isn't very diverse. Each database has its own dialect of SQL with innovations on top of the base language but there are no really new ideas here.
+
+> SQL is actually a [backronym](https://en.wikipedia.org/wiki/Backronym)! It was originally named "sequel" as in, a sequel to SQUARE (Specifying queries using a relational environment, yes that's a whole mouthful. Why do nerds love long acronyms so much?) So next time you're arguing with someone about how to pronounce SQL, you can drop this knowledge bomb.
+
+SQL was designed in 1973 and made available in 1979. It hasn't really changed much since unlike the rest of the software development world.
+
+![an IBM database admin mixing on a turntable in order to perform a join query
+](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F156dcb76-396c-44c3-82e0-b1f4b9c2d112_600x470.png)
+
+_an IBM database admin mixing on a turntable in order to perform a join query_
+
+## The Problems
+
+_here's the actual criticism part_
+
+Because there's a lot to unpack here regarding what's actually problematic with the status quo of relational databases, I'm going to summarise the issues here and expand in future posts.
+
+I'm aiming to keep this less of a rant and more of a set of proposals for future work in the relational database market. Each future post will outline the issue and a detailed solution in a hypothetical new product.
+
+1. Human machine interface vs. application programming interface, why not both?
+2. A language within a language via string literals is how you lose all static analysis and type safety.
+3. SQL is too high level to foster an ecosystem of novel approaches to interface design.
+
+Shout at me on Twitter [@Southclaws](https://twitter.com/Southclaws) if you want to voice your opinion on any of these particular points.
+
+## Isn't all this just a huge waste of time?
+
+_trying to change the status quo may feel like a Sisyphean task but there's value in it_
+
+The SQL specification is fairly antithetical to the open source and free software world. You have to pay to get access to the latest ANSI specification. If a budding new software engineer wanted to dig into this document for whatever reason and understand what text is behind the world's most common data query language, they need to fork out £150 which is a LOT of money if you're not already earning a fairly decent software engineer's salary in the US, UK or Europe.
+
+Meanwhile, I can freely access the POSIX specification, the HTTP specification, the ECMAScript specification (better known as JavaScript), the TCP Specification (or anything written by the IETF, which are actual web pages not awkward PDF files). I can take essentially any existing technology the world's software depends on and build my own version of it and test my implementation against a written specification.
+
+If I do decide to pay the price and read the spec, I'm greeted with a huge document because SQL is a huge complex language (and it's FAR from structured and FAR from declarative). I read part of the ANSI 1999 specification which is 23 chapters spread over a thousand pages. Every spec gets ever more complex.
+
+Sound familiar? C++ suffers the same fate. To the point where professional C++ programmers I know have told me their company just sticks with C++11 because the majority of the new "features" in 17 and 21 are superfluous.
+
+There are plenty of examples of attempts, some successful, to break away from status quos and build something better. Go, Rust and Deno are brilliant examples of these. Both Rust and Deno aim to not only provide languages but also ecosystems. Rust's Cargo and rustup tooling is far superior to the sparse landscape of C++ package managers and compilers. Deno throws out compatibility for a newer Go-inspired approach to dependency management. I'd honestly like to see a similar movement in the database world.
+
+## Prior art
+
+_some people are already trying to build better tooling for databases, most of this work builds on top of SQL similar to how languages build on top of JavaScript._
+
+There are some great projects out there that are attempting to make working with databases easier. I do think all of these are just frankenstein's monster style abstractions on the ever still complexity that is SQL though.
+
+### EdgeDB
+
+Back in 2019, [Elvis Pranskevichus wrote "We Can Do Better Than SQL"](https://www.edgedb.com/blog/we-can-do-better-than-sql) and it was received with a fairly decent sentiment across Hacker News and Lobsters. There's a lot of "don't fix what ain't broken" mentality and no desire to innovate on the HN side (which is to be expected...) but there's a clear desire between those replies for something novel in the database world.
+
+That being said, I don't think EdgeDB really solves the problem. It's still a string-literal oriented query language not an API. Sure, it proposes some more logical syntax but it's still a whole new language. See Part 1 of the follow-up posts for more details on this.
+
+### Prisma
+
+I love this tool. It's really something useful that saves a ton of time while not succumbing to the usual downsides of traditional ORMs (the ones that map objects to relations). I think there's a lot the database world can learn from Prisma. It solves the type safety and schema source of truth problems (outlined in Part 2) by generating type-safe code.
+
+This is not without criticism though, some of the existing complaints behind ORMs are valid for Prisma. Such as the need to perform more complex queries not being satisfied by the generated code. Another issue is the code generator must support your language. Prisma users have already been burned by this [when they dropped support for Go](https://github.com/prisma/prisma-client-go/issues/707).
+
+### Ent
+
+Ent is the go-to replacement for Prisma for Go developers. It's another code generating, database-first tool for Go programs to talk to relational databases. I've been using this on a few projects since 2021 and it's fantastic. I've not had to write any raw SQL yet apart from one instance where I needed a recursive common table expression.
+
+Ent feels like the canonical database adapter for Go. I'm using it for all my Go projects now and I have no real complaints except how the source-code-based schema definition is quite complex and requires frequent reading of the documentation combined with trial and error. Prisma's fully declarative schema format that also generated safe migrations is hard to beat.
+
+### sqlc
+
+This is another Go tool (I'm a Go programmer by profession so naturally a lot of my evaluations are in the Go ecosystem). This one parses .sql files and uses that to generate Go code that binds the arguments to the SQL statements.
+
+It's a neat idea, and definitely a solid choice if you don't mind writing raw SQL. One benefit of writing .sql files is you can get (sometimes) decent editor integration if your editor is hooked up to a live database (since SQL has no native way of writing declarative schemas, you have to connect to a running database.)
+
+### Visual Paradigm
+
+This is an old-school business process modelling suite that also happens to provide code generation from database schema definitions! It's actually the only other tool I could find that does this. It works with Java only.
+
+### CockroachDB
+
+I'm throwing this in here because this is an example of a modern implementation of an SQL database that's PostgreSQL compatible. It's written in Go and has venture backing driving the development of the software. Cockroach Labs also provide a cloud offering which claims to be scalable across regions.
+
+Their blog is a brilliant resource for the internals and the database core is open source so it's been a great learning resource for me!
+
+But what I really think is impressive with CRDB is how they've managed to disrupt the status quo. Being PostgreSQL compatible and horizontally scalable is a huge sell for large applications which need to store a ton of data and be fail resistant.
+
+Now one interesting detail is that CockroachDB isn't fully conforming of the SQL specification or even PostgreSQL's dialect and features. Yet it still rose to fame and became a fantastic tool. Why? Because a lot of applications literally just need four features: Create, Read, Update, Delete. What CockroachDB really shines in is providing an amazing overall experience all the way from deployment to querying to scaling out.
+
+## In Conclusion
+
+there are some great tools out there but a lot of them, in my opinion, don't quite solve the true underlying problems with existing relational databases. I think there's a lot that can be learnt from CockroachDB, Rust, Go and Deno focusing on the ecosystem and toolchain side of things and understanding that they don't need to be perfect and satisfy every use-case. If a language has decent package management, decent performance, decent community and decent compile-time then it's far superior to a language that only has perfect performance and sucks everywhere else (Go vs C anyone?)
+
+So I think there's a huge gap in the market here for a database system that provides decent features, decent type safety via code generation, decent command line interface and a decent API. It doesn't need recursive common table expressions and windowing functions because the people who need those features will likely stick with existing databases anyway.
+
+If this article makes you feel things, [@ me on Twitter](https://twitter.com/Southclaws)!

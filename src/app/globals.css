@@ -1,0 +1,159 @@
+@layer reset, base, tokens, recipes, utilities;
+
+@layer base {
+  html,
+  body,
+  __next {
+    height: 100%;
+    min-height: 100vh;
+    background-color: var(--colors-bg);
+    color: var(--colors-fg);
+
+    --font-scale: 10vw;
+  }
+
+  h1 {
+    font-size: var(--font-sizes-heading1);
+    font-size: clamp(
+      var(--font-sizes-heading1-min),
+      var(--font-scale),
+      var(--font-sizes-heading1-max)
+    );
+    font-weight: var(--font-weights-black);
+  }
+
+  h2 {
+    font-size: var(--font-sizes-heading2);
+    font-size: clamp(
+      var(--font-sizes-heading2-min),
+      var(--font-scale),
+      var(--font-sizes-heading2-max)
+    );
+    font-weight: var(--font-weights-black);
+  }
+
+  h3 {
+    font-size: var(--font-sizes-heading3);
+    font-size: clamp(
+      var(--font-sizes-heading3-min),
+      var(--font-scale),
+      var(--font-sizes-heading3-max)
+    );
+    font-weight: var(--font-weights-extrabold);
+  }
+
+  h4 {
+    font-size: var(--font-sizes-heading4);
+    font-size: clamp(
+      var(--font-sizes-heading4-min),
+      var(--font-scale),
+      var(--font-sizes-heading4-max)
+    );
+    font-weight: var(--font-weights-extrabold);
+  }
+
+  h5 {
+    font-size: var(--font-sizes-heading5);
+    font-size: clamp(
+      var(--font-sizes-heading5-min),
+      var(--font-scale),
+      var(--font-sizes-heading5-max)
+    );
+    font-weight: var(--font-weights-bold);
+  }
+
+  h6 {
+    font-size: var(--font-sizes-heading6);
+    font-size: clamp(
+      var(--font-sizes-heading6-min),
+      var(--font-scale),
+      var(--font-sizes-heading6-max)
+    );
+    font-weight: var(--font-weights-bold);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--fonts-heading);
+  }
+
+  p {
+    font-family: var(--fonts-body);
+    margin-bottom: var(--spacing-2);
+  }
+
+  a {
+    color: var(--colors-link);
+  }
+
+  ul {
+    margin-left: 1rem;
+    list-style-type: square;
+    color: var(--colors-fg-muted);
+  }
+
+  /* BLOCK ELEMENTS */
+
+  small {
+    font-size: var(--font-size);
+    font-size: clamp(100%, calc(var(--font-size) / 4) + 4vw, var(--font-size));
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul {
+    list-style: circle;
+  }
+
+  li {
+    margin-left: var(--spacing-4);
+  }
+
+  blockquote {
+    background: var(--colors-fg-subtle);
+    border-left: var(--spacing-2) solid var(--colors-fg-subtle);
+    margin: var(--spacing-4) var(--spacing-2);
+    padding: var(--spacing-2);
+    border-radius: var(--radii-lg);
+  }
+  blockquote p {
+    display: inline;
+  }
+
+  pre {
+    font-family: monospace;
+    overflow-x: scroll;
+    max-width: 100%;
+  }
+
+  /* LEAF ELEMENTS */
+
+  strong {
+    font-weight: 500;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  u {
+    font-size: larger;
+    text-decoration: underline;
+  }
+
+  code {
+    font-family: monospace;
+  }
+
+  hr {
+    border-color: var(--colors-gray-100);
+    padding-bottom: var(--spacing-2);
+    padding-top: var(--spacing-2);
+  }
+}
