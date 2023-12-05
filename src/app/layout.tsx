@@ -16,9 +16,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Barney",
-  description: "Multidisciplinary maker",
-  metadataBase: new URL("https://barney.is"),
+  title: "barney's tech blog | southclaws",
+  description:
+    "multidisciplinary maker | this site is a never-ending exploration into the details",
+  metadataBase: new URL("https://southcla.ws"),
 };
 
 export default function RootLayout({
