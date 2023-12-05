@@ -32,6 +32,10 @@ export default defineConfig({
           body: { value: "{fonts.inter}" },
         },
         fontSizes: {
+          header: {
+            value:
+              "clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem)",
+          },
           heading1: {
             DEFAULT: { value: "2.027rem" },
             min: { value: "2.027rem" },

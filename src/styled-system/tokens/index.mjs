@@ -1751,6 +1751,10 @@ const tokens = {
     "value": "var(--fonts-body)",
     "variable": "var(--fonts-body)"
   },
+  "fontSizes.header": {
+    "value": "var(--font-sizes-header)",
+    "variable": "var(--font-sizes-header)"
+  },
   "fontSizes.heading1": {
     "value": "var(--font-sizes-heading1)",
     "variable": "var(--font-sizes-heading1)"

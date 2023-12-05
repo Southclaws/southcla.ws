@@ -11,11 +11,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         height="full"
         marginX="auto"
         background="outline"
+        p="md.fluid"
       >
         <VStack alignItems="start">
           <header>
             <styled.hgroup mb={{ base: "8", md: "4" }}>
-              <styled.h1 fontSize="7xl" color="fg" lineHeight="headingFluid">
+              <styled.h1 fontSize="header" color="fg">
                 southclaws
               </styled.h1>
               <styled.p ml="0.5" color="fg.muted">

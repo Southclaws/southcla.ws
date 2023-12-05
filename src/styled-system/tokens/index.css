@@ -438,6 +438,7 @@
   --breakpoints-2xl: 1536px;
   --fonts-heading: var(--fonts-orbiter);
   --fonts-body: var(--fonts-inter);
+  --font-sizes-header: clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem);
   --font-sizes-heading1: 2.027rem;
   --font-sizes-heading1-min: 2.027rem;
   --font-sizes-heading1-max: 2.986rem;
