@@ -1,0 +1,9 @@
+{
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.copyFiles.destination": {
+    "**": "public/${documentBaseName}/image.png"
+  },
+  "pasteImage.path": "${projectRoot}/public/images",
+  "pasteImage.insertPattern": "![${imageFileNameWithoutExt}](/images/${imageFileName})"
+}
