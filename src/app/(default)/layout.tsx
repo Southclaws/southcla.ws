@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </styled.hgroup>
           </header>
 
-          <main>{children}</main>
+          <styled.main maxW="full">{children}</styled.main>
         </VStack>
 
         <footer>
