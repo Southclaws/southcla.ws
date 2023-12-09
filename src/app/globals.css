@@ -85,6 +85,7 @@
   h5,
   h6 {
     font-family: var(--fonts-heading);
+    text-wrap: balance;
   }
 
   p {
@@ -160,6 +161,8 @@
     padding-left: var(--spacing-2);
     padding-right: var(--spacing-2);
     background-color: var(--colors-fg-subtle);
+    word-break: keep-all;
+    text-wrap: pretty;
   }
 
   hr {
