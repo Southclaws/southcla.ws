@@ -3,21 +3,21 @@ title: Migrating from Chakra UI to Panda CSS
 date: 2023-12-08T16:56:30Z
 */}
 
-![The Chakra UI logo with a curly arrow pointing to the Panda CSS logo](images/chakra-to-panda.png)
-
 # Migrating from Chakra UI to Panda CSS
 
 In this article I'll be covering the motivations behind why I'm adopting Panda CSS for my frontend work, how it compares to Chakra UI, and how you can migrate from Chakra UI to Panda CSS gradually as well as what kind of work is required to maintain both in the same codebase for a period of time.
+
+![The Chakra UI logo with a curly arrow pointing to the Panda CSS logo](images/chakra-to-panda.png)
 
 ## What actually is Panda CSS?
 
 Panda CSS is a new utility-first CSS framework. Now you might be thinking "oh so just like tailwind/tachyons" and the outcome does look similar but there's a key difference. Panda's main power is that it's built on the idea of code generation rather than pre-defined utility classes. So instead of tweet sized `className` strings you can make use of generated classes or JSX style props much like styled-components.
 
-## Why not just use styled-components?
+### Why not just use styled-components?
 
 Styled components is great but it requires a bit of extra editor magic to make auto-completions work since it's all based on string literals. Now you can enable objects too and it looks fairly similar but I think the real power of Panda comes with its theming and token system, which I'll get into later.
 
-## Why not just use tailwind/tachyons?
+### Why not just use tailwind/tachyons?
 
 Tailwind is nice, and it's fast, or at least that's what I hear. I've only used it briefly but I used to build a ton of projects with Tachyons so I'm familiar with the single-static-utility-css tool and it has its place.
 
