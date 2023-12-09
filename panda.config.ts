@@ -127,9 +127,6 @@ export default defineConfig({
               _osDark: "{colors.accent.800}",
             },
           },
-          outline: {
-            value: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='1%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
-          },
         },
         borders: {
           dotted: {

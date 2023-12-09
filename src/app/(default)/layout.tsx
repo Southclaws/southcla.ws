@@ -2,16 +2,24 @@ import { Box, VStack, styled } from "@/styled-system/jsx";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <Box maxW="breakpoint-md" p="md.fluid" height="full" mx="auto">
+    <Box
+      display="flex"
+      flexDir="column"
+      alignItems="center"
+      height="full"
+      width="full"
+      minH="dvh"
+      p="md.fluid"
+    >
       <Box
+        flex="1"
         display="flex"
         flexDir="column"
         justifyContent="space-between"
         gap="4"
-        height="full"
-        marginX="auto"
-        background="outline"
+        maxW="breakpoint-md"
         p="md.fluid"
+        border="dotted"
       >
         <VStack alignItems="start">
           <header>

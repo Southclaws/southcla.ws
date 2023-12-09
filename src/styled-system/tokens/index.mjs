@@ -1887,10 +1887,6 @@ const tokens = {
     "value": "var(--colors-link)",
     "variable": "var(--colors-link)"
   },
-  "colors.outline": {
-    "value": "var(--colors-outline)",
-    "variable": "var(--colors-outline)"
-  },
   "borders.dotted": {
     "value": "var(--borders-dotted)",
     "variable": "var(--borders-dotted)"

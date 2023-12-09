@@ -1,15 +1,21 @@
 @layer reset, base, tokens, recipes, utilities;
 
 @layer base {
-  html,
-  body,
-  __next {
-    height: 100%;
-    min-height: 100vh;
+  :root {
+    --font-scale: 8vw;
+  }
+
+  html {
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+
     background-color: var(--colors-bg);
     color: var(--colors-fg);
+  }
 
-    --font-scale: 10vw;
+  body {
+    min-height: 100dvh;
+    height: max-content;
   }
 
   h1 {
