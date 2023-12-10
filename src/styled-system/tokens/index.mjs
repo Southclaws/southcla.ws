@@ -1660,27 +1660,27 @@ const tokens = {
     "variable": "var(--colors-slate-950)"
   },
   "colors.offwhite": {
-    "value": "hsla(40, 100%, 99%, 1)",
+    "value": "hsl(40deg 100% 99%)",
     "variable": "var(--colors-offwhite)"
   },
   "colors.offwhite.muted": {
-    "value": "hsla(40, 100%, 99%, 0.66)",
+    "value": "hsl(35deg 3% 74%)",
     "variable": "var(--colors-offwhite-muted)"
   },
   "colors.offwhite.subtle": {
-    "value": "hsla(40, 100%, 99%, 0.1)",
+    "value": "hsl(30deg 5% 92%)",
     "variable": "var(--colors-offwhite-subtle)"
   },
   "colors.offblack": {
-    "value": "hsla(222, 18%, 25%, 1)",
+    "value": "hsl(222deg 18% 25%)",
     "variable": "var(--colors-offblack)"
   },
   "colors.offblack.muted": {
-    "value": "hsla(222, 18%, 25%, 0.66)",
+    "value": "hsl(222deg 12% 32%)",
     "variable": "var(--colors-offblack-muted)"
   },
   "colors.offblack.subtle": {
-    "value": "hsla(222, 18%, 25%, 0.1)",
+    "value": "hsl(282deg 11% 29%)",
     "variable": "var(--colors-offblack-subtle)"
   },
   "colors.accent.50": {
@@ -1882,6 +1882,10 @@ const tokens = {
   "colors.bg.muted": {
     "value": "var(--colors-bg-muted)",
     "variable": "var(--colors-bg-muted)"
+  },
+  "colors.bg.subtle": {
+    "value": "var(--colors-bg-subtle)",
+    "variable": "var(--colors-bg-subtle)"
   },
   "colors.link": {
     "value": "var(--colors-link)",

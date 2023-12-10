@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         flexDir="column"
         justifyContent="space-between"
         gap="4"
+        width="full"
         maxW="breakpoint-md"
         p="md.fluid"
         border="dotted"
@@ -33,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </styled.hgroup>
           </header>
 
-          <styled.main maxW="full">{children}</styled.main>
+          <styled.main w="full">{children}</styled.main>
         </VStack>
 
         <footer>

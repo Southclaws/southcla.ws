@@ -4,7 +4,14 @@ import "./article.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <styled.article className="content" display="flex" flexDir="column" gap="8">
+    <styled.article
+      className="content"
+      display="flex"
+      flexDir="column"
+      gap="8"
+      w="full"
+      overflow="hidden"
+    >
       <Link className="link" href="/">
         &larr;&nbsp;Back
       </Link>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./code-light.css";
+import "./code-dark.css";
 
 const orbiter = localFont({
   src: "./TASAOrbiterVF.woff2",

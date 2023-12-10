@@ -1,35 +1,17 @@
 @layer content {
-  .content {
-    & h1,
-    h2 {
-      background-color: var(--colors-fg);
-      color: var(--colors-bg);
-    }
+  .content h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    width: max-content;
 
-    & h1 {
-      padding: 1rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
+    padding: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
-    & h2 {
-      padding: 0.5rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    & h3,
-    h4,
-    h5,
-    h6 {
-      position: relative;
-
-      padding: 0.2rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-
-      background-color: var(--colors-fg-subtle);
-      color: var(--colors-fg);
-    }
+    background-color: var(--colors-fg-subtle);
+    color: var(--colors-bg);
+    border-radius: var(--radii-sm);
   }
 }

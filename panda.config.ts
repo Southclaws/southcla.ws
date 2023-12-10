@@ -120,6 +120,12 @@ export default defineConfig({
                 _osDark: "{colors.offblack.muted}",
               },
             },
+            subtle: {
+              value: {
+                base: "{colors.offwhite.subtle}",
+                _osDark: "{colors.offblack.subtle}",
+              },
+            },
           },
           link: {
             value: {
@@ -145,14 +151,14 @@ export default defineConfig({
         },
         colors: {
           offwhite: {
-            DEFAULT: { value: "hsla(40, 100%, 99%, 1)" },
-            muted: { value: "hsla(40, 100%, 99%, 0.66)" },
-            subtle: { value: "hsla(40, 100%, 99%, 0.1)" },
+            DEFAULT: { value: "hsl(40deg 100% 99%)" },
+            muted: { value: "hsl(35deg 3% 74%)" },
+            subtle: { value: "hsl(30deg 5% 92%)" },
           },
           offblack: {
-            DEFAULT: { value: "hsla(222, 18%, 25%, 1)" },
-            muted: { value: "hsla(222, 18%, 25%, 0.66)" },
-            subtle: { value: "hsla(222, 18%, 25%, 0.1)" },
+            DEFAULT: { value: "hsl(222deg 18% 25%)" },
+            muted: { value: "hsl(222deg 12% 32%)" },
+            subtle: { value: "hsl(282deg 11% 29%)" },
           },
           accent: {
             "50": {

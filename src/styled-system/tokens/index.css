@@ -415,12 +415,12 @@
   --colors-slate-800: #1e293b;
   --colors-slate-900: #0f172a;
   --colors-slate-950: #020617;
-  --colors-offwhite: hsla(40, 100%, 99%, 1);
-  --colors-offwhite-muted: hsla(40, 100%, 99%, 0.66);
-  --colors-offwhite-subtle: hsla(40, 100%, 99%, 0.1);
-  --colors-offblack: hsla(222, 18%, 25%, 1);
-  --colors-offblack-muted: hsla(222, 18%, 25%, 0.66);
-  --colors-offblack-subtle: hsla(222, 18%, 25%, 0.1);
+  --colors-offwhite: hsl(40deg 100% 99%);
+  --colors-offwhite-muted: hsl(35deg 3% 74%);
+  --colors-offwhite-subtle: hsl(30deg 5% 92%);
+  --colors-offblack: hsl(222deg 18% 25%);
+  --colors-offblack-muted: hsl(222deg 12% 32%);
+  --colors-offblack-subtle: hsl(282deg 11% 29%);
   --colors-accent-50: hsl(28deg 50% 95%);
   --colors-accent-100: hsl(64deg 31% 12%);
   --colors-accent-200: hsl(60deg 32% 15%);
@@ -471,6 +471,7 @@
   --colors-fg-subtle: var(--colors-offblack-subtle);
   --colors-bg: var(--colors-offwhite);
   --colors-bg-muted: var(--colors-offwhite-muted);
+  --colors-bg-subtle: var(--colors-offwhite-subtle);
   --colors-link: var(--colors-accent-500);
   --borders-dotted: 1px dashed var(--colors-fg-subtle)
 }
@@ -482,6 +483,7 @@
     --colors-fg-subtle: var(--colors-offwhite-subtle);
     --colors-bg: var(--colors-offblack);
     --colors-bg-muted: var(--colors-offblack-muted);
+    --colors-bg-subtle: var(--colors-offblack-subtle);
     --colors-link: var(--colors-accent-800)
         }
     }
