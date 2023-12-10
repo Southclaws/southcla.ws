@@ -1,6 +1,5 @@
 import { styled } from "@/styled-system/jsx";
 import Link from "next/link";
-import "./article.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
