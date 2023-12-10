@@ -22,6 +22,7 @@
     "react-dom": "^18",
     "refractor": "^4.8.1",
     "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
     "satori": "^0.10.11",
     "yaml": "^2.3.4",
     "zod": "^3.22.4"
