@@ -36,6 +36,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </pre>
       );
     },
+    a: (props) => <a className="link" target="_blank" {...props} />,
     code: (props) => <code>{props.children}</code>,
     ...components,
   };
