@@ -11,51 +11,91 @@ In this article I'll be covering the motivations behind why I'm adopting Panda C
 
 ## What actually is Panda CSS?
 
-Panda CSS is a new utility-first CSS framework. Now you might be thinking "oh so just like tailwind/tachyons" and the outcome does look similar but there's a key difference. Panda's main power is that it's built on the idea of code generation rather than pre-defined utility classes. So instead of tweet sized `className` strings you can make use of generated classes or JSX style props much like styled-components.
+You know what Panda is, because you searched for it and found this article. But just to ~~give you a refresher~~ do some SEO magic for Google.
 
-### Why not just use styled-components?
+Panda CSS is a new utility-first CSS framework. Now you might be thinking "oh so just like tailwind/tachyons" and the outcome does look similar but there's a key difference. Panda's main power is that it's built on the idea of code generation rather than pre-defined utility classes. So instead of writing tweet sized `className` strings you can make use of generated classes or JSX style props much like styled-components.
 
-Styled components is great but it requires a bit of extra editor magic to make auto-completions work since it's all based on string literals. Now you can enable objects too and it looks fairly similar but I think the real power of Panda comes with its theming and token system, which I'll get into later.
+But it retains the unrivaled (in my opinion) developer experience of style props, for example:
 
-### Why not just use tailwind/tachyons?
+```tsx
+<styled.article         
+  className="content"   
+  display="flex"        
+  flexDir="column"      
+  gap="8"               
+  w="full"              
+  overflow="hidden"     
+>                      
+```
 
-Tailwind is nice, and it's fast, or at least that's what I hear. I've only used it briefly but I used to build a ton of projects with Tachyons so I'm familiar with the single-static-utility-css tool and it has its place.
+becomes these utility classes:
 
-Personally I'm not a fan of using it for large web _applications_ but rather for quick simple landing pages and static sites. I think it's great for that and I think it's great for prototyping. But I think it's also this weird combination of being too low level and too high level simultaneously.
+```css
+.d_flex {
+  display: flex
+}
+.flex_column {
+  flex-direction: column
+}
+.gap_8 {
+  gap: var(--spacing-8)
+}
+.w_full {
+  width: var(--sizes-full)
+}
+.overflow_hidden {
+  overflow: hidden
+}
+```
 
-## Motivations
+And it's all based on modern web native technologies like CSS layers, variables and conditionals.
 
-Now why might you want to do this? If you've come across this article from a Google search, perhaps you've already made the decision and understand the why and are only interested in the what and how. If that's the case, feel free to skip forward.
+One thing worth noting is that Panda CSS is _just_ the styles part. It's not a component library and does not provide out of the box components to use like Chakra does. Panda is sort of like a replacement for Emotion, which Chakra uses. If you want to know more about this growing ecosystem, I highly recommend reading this by Segun Adebayo, the creator of Chakra UI:
 
-If you want to read the first Storyden PR that started the migration, that's here: https://github.com/Southclaws/storyden/pull/30
+https://www.adebayosegun.com/blog/chakra-panda-ark-whats-the-plan
 
-If you're reading this out of interest, perhaps it's been shared or popped up on a link aggregator, then I'll give you a bit of background on why I'm making this change.
+## Motivations to move
+
+Now, Chakra UI is fairly similar so why might you want to change? If you've come across this article from a Google search, perhaps you've already made the decision and understand the why and are only interested in the what and how. If that's the case, feel free to skip forward.
+
+It boils down to three reasons:
+- Outgrown somewhat, I'm hitting roadblocks more often
+- Feels bloated, lots of client side JS with Emotion
+- Need a static solution for Storyden's on-prem use-case
 
 I work on a few frontend projects ranging from small, mostly static, landing pages/marketing sites, both personal and commercial as well as large complex web applications, one of which is [Storyden](https://storyden.org) the other is [Odin](https://joinodin.com) where I'm a full stack engineer and we're currently going through this migration.
 
 Among all of my work, I value simple pipelines and isolated complexity. Complexity is always present and managing it is the difference between a dead "side project" and a successful product.
 
-I also value the customer's experience above anything else, and that doesn't matter who that customer is, what device they're using or what their abilities are. As you can probably guess I'm talking about accessibility, which in my mind doesn't just extend to screen readers and keyboard navigation but also to what devices are supported. Nobody should be left behind.
+Chakra served me very well and it will continue to do so for some projects but with products like Odin and Storyden that I'm going to customise all the components anyway *and* I want small static CSS and minimal runtime impact, Panda just makes more sense.
+
+If you want to read the first Storyden PR that started the migration, that's here: https://github.com/Southclaws/storyden/pull/30
 
 ### What's the deal with RSC, SSR and `"use client"`?
 
-This is the one that got me started exploring alternatives. When Next.js 13 was released and the "App directory" (terrible product name btw) was in the developer news cycles, I started using it. I won't go into the details, it's a whole separate post, but let's just treat "App directory" as a whole new framework. I was effectively migrating to a new framework for all intents and purposes.
-
-The main thing Next.js 13 introduced was the usage of a fairly new React feature called "React server components" Josh Comeau wrote a great piece on the details of what that actually means and I encourage you to read it if you're interested:
+This is the one that got me started exploring alternatives to Chakra. The main thing Next.js 13 introduced was the usage of a fairly new React feature called "React server components" Josh Comeau wrote a great piece on the details of what that actually means and I encourage you to read it if you're interested:
 
 https://www.joshwcomeau.com/react/server-components/
 
-But what confused me at first was RSC, SSR and "use client". When I moved the index page of Storyden into the app directory and wired everything up I was met with an error telling me to write `"use client"` at the top of all my files.
+What confused me at first was RSC, SSR and "use client", which this article covers very well! The short version is: Chakra UI still supports server side *rendering*, but not server *components*. Which means I can't make use of certain component tree optimisations and features mentioned in the above article.
 
-Okay, not _all_ my files, but I started doing this from the leaves of the component tree inwards. Which was a huge mistake because I just needed to do it on the top-most leaf. But I didn't do this because I thought `"use client"` meant my page would be rendering _only_ on the client. I thought it was a way to opt-out of SSR.
+The reason for this is that Chakra UI uses [Emotion](https://emotion.sh/) for styling, which is a CSS-in-JS library. It's great, I've used it for years, but it's not compatible with RSC for various reasons.
 
-This is not true and it's something many people I've talked to and seen online have run into. The phrase "use client" just implies "use the client to render these components and their children". What it actually means is "these components and their children _may_ be rendered on either the server or the client".
+So I decided to switch in order to both make use of the latest Next.js features as well as learn how they work in a real production application.
 
-So, if your component has `"use client"` at the top of the file **It will still render on the server upon first page-load**. That's the important key that _is_ documented it's just hidden within the mountains of documentation you have to read to understand Next.js 13's app-directory system.
+```tsx
+export async function Server() {
+  const data = await fetch("/v1/threads");
 
-Which sucks. Because I think It's amazing, but it wasn't taken well by the community, rightly so.
+  return (
+    <Box>
+      <Client threads={data.threads} />
+    </Box>
+  );
+}
+```
 
-Anyway, Chakra UI uses Emotion for styling, which is a CSS-in-JS library. It's great, I've used it for years, but it's not compatible with RSC for various reasons. So I decided to switch in order to make use of the latest Next.js features and learn them in a real production application.
+In this minimal example, the `Box` we see is not Chakra's, but Panda's. And the component is a React Server Component, which allows top-level awaited fetch.
 
 ### Static is generally simpler
 
@@ -63,27 +103,9 @@ The other reason is that Chakra has been getting in the way a bit more recently,
 
 Panda, being mostly built on the ideas of CSS variables, design tokens and code generation felt much simpler. And now that I've migrated or been involved in the migration of about 4 and a half codebases, I can safely say it is.
 
-## Chakra UI vs Panda CSS
-
-Chakra is great. It really is. Segun and contributors have done an amazing job with the library. It's my go-to for quick things but it also scales really well to full-blown applications. Style props are my preferred way to do any form of styling nowadays and Chakra's built-in theme, tokens and components are pretty much all you need to build a great product.
-
-### Compile-time goodness
-
-Panda generates all the CSS at compile-time, which I love the idea of. I make use of declarative spec-driven code-generation a lot for my work and applying this to the frontend felt natural.
-
-### Strict tokens
-
-It also has "strict" mode which essentially means that you cannot use ad-hoc styles, you must use tokens. This is great for enforcing consistency, raising inconsistencies to the designer and making sure everything satisfies your design system.
-
-### Conditionals are web-native
-
-Did you ever `border={isClicked ? "brand.blue" : "grey.200"}` I did. It's nice, but realistically speaking what you're looking at here is a JavaScript branch expression. And I promise this isn't tin-foil-hat-javascript-fear but it's using procedural constructs to encode a semantic that already exists in CSS.
-
-I'd rather use the tool for the job, a `[data-clicked="true"]` selector. Panda is great at setting these up and it's as simple as `_clicked="brand.blue". Which generates purely static CSS. All you need to do is add the data attribute to your component when the time is right. The styling state change is then entirely handled by the browser, declaratively, via the stylesheet.
-
-This means less state for you to worry about, less expressions being evaluated and ultimately, less code to maintain.
-
 ## Migrating
+
+
 
 Alright let's get to the good bit. How do you migrate from Chakra UI to Panda CSS?
 
@@ -347,6 +369,26 @@ Semantic tokens are more about the actual use-cases those colours are being used
 
 Sometimes the differences can blur, like on this blog I originally defined "heading1" as a regular token but then realised it's kind of semantic so I moved them to semantic tokens. I think in a larger project with a full typography scale, there may be a large set of sizing tokens defined as regular tokens and then things like "heading", "body", etc would be semantic tokens.
 
+## Chakra UI vs Panda CSS
+
+Chakra is great. It really is. Segun and contributors have done an amazing job with the library. It's my go-to for quick things but it also scales really well to full-blown applications. Style props are my preferred way to do any form of styling nowadays and Chakra's built-in theme, tokens and components are pretty much all you need to build a great product.
+
+### Compile-time goodness
+
+Panda generates all the CSS at compile-time, which I love the idea of. I make use of declarative spec-driven code-generation a lot for my work and applying this to the frontend felt natural.
+
+### Strict tokens
+
+It also has "strict" mode which essentially means that you cannot use ad-hoc styles, you must use tokens. This is great for enforcing consistency, raising inconsistencies to the designer and making sure everything satisfies your design system.
+
+### Conditionals are web-native
+
+Did you ever `border={isClicked ? "brand.blue" : "grey.200"}` I did. It's nice, but realistically speaking what you're looking at here is a JavaScript branch expression. And I promise this isn't tin-foil-hat-javascript-fear but it's using procedural constructs to encode a semantic that already exists in CSS.
+
+I'd rather use the tool for the job, a `[data-clicked="true"]` selector. Panda is great at setting these up and it's as simple as `_clicked="brand.blue". Which generates purely static CSS. All you need to do is add the data attribute to your component when the time is right. The styling state change is then entirely handled by the browser, declaratively, via the stylesheet.
+
+This means less state for you to worry about, less expressions being evaluated and ultimately, less code to maintain.
+
 ## Things to watch out for
 
 ### Type safety is only for components
@@ -403,4 +445,22 @@ When I ran into the above issue with invalid token names, I accidentally shipped
 
 But it didn't just fail to minify, it just considered the entire rest of the file as a single token and stripped all spaces from the rest of the code. This resulted in shipping a CSS file that was half valid and the rest was a single blob of text that included beauties such as `@mediascreenand(min-width:64em){`.
 
-Debugging that was an absolute nightmare and I almost gave up entirely.
+To disable this feature, inside a domain property configuration, go to **Speed** > **Optimization** > **Content Optimization**
+
+![2023-12-11-17-56-00](/images/2023-12-11-17-56-00.png)
+
+![2023-12-11-17-56-41](/images/2023-12-11-17-56-41.png)
+
+Then scroll down to **Auto Minify** and make sure **CSS** is unchecked.
+
+![2023-12-11-17-58-03](/images/2023-12-11-17-58-03.png)
+
+After a few seconds, head over to the main **Overview** screen for the domain property:
+
+![2023-12-11-17-58-53](/images/2023-12-11-17-58-53.png)
+
+Hit **Purge cache** and finally **Purge Everything**.
+
+![2023-12-11-17-59-01](/images/2023-12-11-17-59-01.png)
+
+![2023-12-11-18-00-11](/images/2023-12-11-18-00-11.png)

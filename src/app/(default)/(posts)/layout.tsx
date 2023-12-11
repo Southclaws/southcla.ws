@@ -7,7 +7,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       className="content"
       display="flex"
       flexDir="column"
-      gap="8"
       w="full"
       overflow="hidden"
     >
