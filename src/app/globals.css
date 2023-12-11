@@ -124,7 +124,7 @@
   blockquote {
     background: var(--colors-bg-subtle);
     border-left: var(--spacing-2) solid var(--colors-fg-subtle);
-    margin: var(--spacing-4) var(--spacing-2);
+    margin: var(--spacing-4) 0;
     padding: var(--spacing-2);
     border-radius: var(--radii-lg);
     width: 100%;
