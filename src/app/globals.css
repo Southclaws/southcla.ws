@@ -90,7 +90,7 @@
 
   p {
     font-family: var(--fonts-body);
-    margin-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
   }
 
   a {
@@ -100,7 +100,6 @@
   ul {
     margin-left: 1rem;
     list-style-type: square;
-    color: var(--colors-fg-muted);
   }
 
   /* BLOCK ELEMENTS */
