@@ -1,7 +1,7 @@
 import { Box, VStack, styled } from "@/styled-system/jsx";
 
-import "./code-light.css";
-import "./code-dark.css";
+import "../code-light.css";
+import "../code-dark.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
