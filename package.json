@@ -14,6 +14,7 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.3",
     "@types/mdx": "^2.0.10",
+    "@vercel/analytics": "^1.1.1",
     "date-fns": "^2.30.0",
     "glob": "^10.3.10",
     "hast-util-to-html": "^9.0.0",

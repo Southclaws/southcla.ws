@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbiter.variable} ${inter.variable}`}>
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }
