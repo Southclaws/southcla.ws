@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       height="full"
       width="full"
       minH="dvh"
-      p="md.fluid"
+      p="sm.fluid"
     >
       <Box
         flex="1"
@@ -22,8 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         gap="4"
         width="full"
         maxW="breakpoint-md"
-        p="md.fluid"
-        border="dotted"
+        p="sm.fluid"
       >
         <VStack alignItems="start">
           <header>

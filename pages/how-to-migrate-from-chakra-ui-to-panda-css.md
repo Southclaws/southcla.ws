@@ -1,7 +1,7 @@
-{/*
+---
 title: Migrating from Chakra UI to Panda CSS
 date: 2023-12-08T16:56:30Z
-*/}
+---
 
 # Migrating from Chakra UI to Panda CSS
 

@@ -1,7 +1,7 @@
-{/*
+---
 title: How does YouTube's blurry background work?
 date: 2023-12-12T07:24:30Z
-*/}
+---
 
 # How does YouTube's blurry background work?
 

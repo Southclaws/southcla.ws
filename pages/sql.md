@@ -1,7 +1,7 @@
-{/*
+---
 title: The Stockholm Syndrome of SQL
 date: 2022-06-26T00:00:00Z
-*/}
+---
 
 # The Stockholm Syndrome of SQL
 
@@ -15,7 +15,7 @@ A question I've asked myself, my mentors, my friends and colleagues is: what's t
 
 I'm often met with responses such as:
 
-> SQL is *fine*.
+> SQL is _fine_.
 
 > Don't fix what ain't broken.
 
@@ -34,7 +34,6 @@ TypeScript is an entire language backed by a trillion-dollar corporation with th
 Deno was started by Ryan Dahl, who created Node.js, in an effort to provide a better platform to build applications using V8. Deno throws out backwards compatibility in an attempt to start fresh and "do things right". It has a decent following and looks somewhat promising. It uses normal TypeScript, compiles to JavaScript under the hood and executes on the V8 runtime. It's basically Node.js but with native TypeScript support and a different approach to dependency management.
 
 ![the deno dino, because all good software products need a cute mascot](https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F74faa725-7660-49c2-8904-2cc3994ac03c_512x512.svg)
-
 
 LLVM and JVM both facilitate the existence of about 16 major languages (not including small side projects and non-commercial stuff) they are both low-ish level platforms that provide a runtime, optimisation and cross-platform usage. If you write a new programming language and it can be compiled with LLVM or JVM, your new language will run on basically any computer on the planet.
 

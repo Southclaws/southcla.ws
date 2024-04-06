@@ -78,6 +78,10 @@ export default defineConfig({
           },
         },
         spacing: {
+          sm: {
+            DEFAULT: { value: "{spacing.2}" },
+            fluid: { value: "clamp(var(--spacing-2), 2vw, var(--spacing-48))" },
+          },
           md: {
             DEFAULT: { value: "{spacing.4}" },
             fluid: { value: "clamp(var(--spacing-4), 4vw, var(--spacing-96))" },

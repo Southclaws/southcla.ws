@@ -1,11 +1,10 @@
 /* eslint-disable */
-import type { ConditionalValue } from './conditions';
+import type { Conditional } from './conditions';
 import type { CssProperties } from './system-types';
 import type { Tokens } from '../tokens/index';
 
-interface PropertyValueTypes {
-	aspectRatio: "auto" | "square" | "landscape" | "portrait" | "wide" | "ultrawide" | "golden";
-	zIndex: Tokens["zIndex"];
+export interface UtilityValues {
+	aspectRatio: Tokens["aspectRatios"];
 	top: Tokens["spacing"];
 	left: Tokens["spacing"];
 	insetInline: Tokens["spacing"];
@@ -17,8 +16,6 @@ interface PropertyValueTypes {
 	insetInlineStart: Tokens["spacing"];
 	right: Tokens["spacing"];
 	bottom: Tokens["spacing"];
-	insetX: Tokens["spacing"];
-	insetY: Tokens["spacing"];
 	float: "left" | "right" | "start" | "end";
 	hideFrom: Tokens["breakpoints"];
 	hideBelow: Tokens["breakpoints"];
@@ -58,11 +55,11 @@ interface PropertyValueTypes {
 	marginInline: "auto" | Tokens["spacing"];
 	marginInlineEnd: "auto" | Tokens["spacing"];
 	marginInlineStart: "auto" | Tokens["spacing"];
+	spaceX: "auto" | Tokens["spacing"];
+	spaceY: "auto" | Tokens["spacing"];
 	outlineColor: Tokens["colors"];
 	outline: Tokens["borders"];
 	outlineOffset: Tokens["spacing"];
-	divideX: string;
-	divideY: string;
 	divideColor: Tokens["colors"];
 	width: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
 	inlineSize: "auto" | Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "screen";
@@ -87,14 +84,13 @@ interface PropertyValueTypes {
 	textEmphasisColor: Tokens["colors"];
 	textIndent: Tokens["spacing"];
 	textShadow: Tokens["shadows"];
+	textShadowColor: Tokens["colors"];
 	textWrap: "wrap" | "balance" | "nowrap";
 	truncate: boolean;
-	listStyleImage: Tokens["assets"];
 	background: Tokens["colors"];
 	backgroundColor: Tokens["colors"];
-	backgroundImage: Tokens["assets"];
-	backgroundGradient: Tokens["gradients"] | "to-t" | "to-tr" | "to-r" | "to-br" | "to-b" | "to-bl" | "to-l" | "to-tl";
-	textGradient: Tokens["gradients"] | "to-t" | "to-tr" | "to-r" | "to-br" | "to-b" | "to-bl" | "to-l" | "to-tl";
+	backgroundGradient: "to-t" | "to-tr" | "to-r" | "to-br" | "to-b" | "to-bl" | "to-l" | "to-tl";
+	textGradient: "to-t" | "to-tr" | "to-r" | "to-br" | "to-b" | "to-bl" | "to-l" | "to-tl";
 	gradientFrom: Tokens["colors"];
 	gradientTo: Tokens["colors"];
 	gradientVia: Tokens["colors"];
@@ -116,20 +112,16 @@ interface PropertyValueTypes {
 	border: Tokens["borders"];
 	borderColor: Tokens["colors"];
 	borderInline: Tokens["borders"];
-	borderInlineWidth: Tokens["borderWidths"];
 	borderInlineColor: Tokens["colors"];
 	borderBlock: Tokens["borders"];
-	borderBlockWidth: Tokens["borderWidths"];
 	borderBlockColor: Tokens["colors"];
 	borderLeft: Tokens["borders"];
 	borderLeftColor: Tokens["colors"];
 	borderInlineStart: Tokens["borders"];
-	borderInlineStartWidth: Tokens["borderWidths"];
 	borderInlineStartColor: Tokens["colors"];
 	borderRight: Tokens["borders"];
 	borderRightColor: Tokens["colors"];
 	borderInlineEnd: Tokens["borders"];
-	borderInlineEndWidth: Tokens["borderWidths"];
 	borderInlineEndColor: Tokens["colors"];
 	borderTop: Tokens["borders"];
 	borderTopColor: Tokens["colors"];
@@ -139,15 +131,13 @@ interface PropertyValueTypes {
 	borderBlockEndColor: Tokens["colors"];
 	borderBlockStart: Tokens["borders"];
 	borderBlockStartColor: Tokens["colors"];
-	opacity: Tokens["opacity"];
 	boxShadow: Tokens["shadows"];
 	boxShadowColor: Tokens["colors"];
 	filter: "auto";
-	dropShadow: Tokens["dropShadows"];
 	blur: Tokens["blurs"];
 	backdropFilter: "auto";
 	backdropBlur: Tokens["blurs"];
-	borderSpacing: Tokens["spacing"];
+	borderSpacing: Tokens["spacing"] | "auto";
 	borderSpacingX: Tokens["spacing"];
 	borderSpacingY: Tokens["spacing"];
 	transitionTimingFunction: Tokens["easings"];
@@ -155,18 +145,19 @@ interface PropertyValueTypes {
 	transitionDuration: Tokens["durations"];
 	transition: "all" | "common" | "background" | "colors" | "opacity" | "shadow" | "transform";
 	animation: Tokens["animations"];
-	animationName: Tokens["animationName"];
+	animationTimingFunction: Tokens["easings"];
+	animationDuration: Tokens["durations"];
 	animationDelay: Tokens["durations"];
+	rotate: "auto" | "auto-3d";
 	scale: "auto";
-	translate: "auto";
+	translate: "auto" | "auto-3d";
 	translateX: Tokens["spacing"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "full" | "-1/2" | "-1/3" | "-2/3" | "-1/4" | "-2/4" | "-3/4" | "-full";
 	translateY: Tokens["spacing"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "full" | "-1/2" | "-1/3" | "-2/3" | "-1/4" | "-2/4" | "-3/4" | "-full";
+	translateZ: Tokens["spacing"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "full" | "-1/2" | "-1/3" | "-2/3" | "-1/4" | "-2/4" | "-3/4" | "-full";
 	accentColor: Tokens["colors"];
 	caretColor: Tokens["colors"];
 	scrollbar: "visible" | "hidden";
 	scrollMargin: Tokens["spacing"];
-	scrollMarginX: Tokens["spacing"];
-	scrollMarginY: Tokens["spacing"];
 	scrollMarginLeft: Tokens["spacing"];
 	scrollMarginRight: Tokens["spacing"];
 	scrollMarginTop: Tokens["spacing"];
@@ -184,8 +175,6 @@ interface PropertyValueTypes {
 	scrollPaddingInline: Tokens["spacing"];
 	scrollPaddingInlineEnd: Tokens["spacing"];
 	scrollPaddingInlineStart: Tokens["spacing"];
-	scrollPaddingX: Tokens["spacing"];
-	scrollPaddingY: Tokens["spacing"];
 	scrollPaddingLeft: Tokens["spacing"];
 	scrollPaddingRight: Tokens["spacing"];
 	scrollPaddingTop: Tokens["spacing"];
@@ -207,103 +196,41 @@ interface PropertyValueTypes {
 
 
 
-  type CssValue<T> = T extends keyof CssProperties ? CssProperties[T] : never
+type WithColorOpacityModifier<T> = T extends string ? `${T}/${string}` : T
 
-  type Shorthand<T> = T extends keyof PropertyValueTypes ? PropertyValueTypes[T] : CssValue<T>
+type ImportantMark = "!" | "!important"
+type WhitespaceImportant = ` ${ImportantMark}`
+type Important = ImportantMark | WhitespaceImportant
+type WithImportant<T> = T extends string ? `${T}${Important}` & { __important?: true } : T;
 
-  export interface PropertyTypes extends PropertyValueTypes {
-  
-	pos: Shorthand<"position">;
-	insetEnd: Shorthand<"insetInlineEnd">;
-	end: Shorthand<"insetInlineEnd">;
-	insetStart: Shorthand<"insetInlineStart">;
-	start: Shorthand<"insetInlineStart">;
-	flexDir: Shorthand<"flexDirection">;
-	p: Shorthand<"padding">;
-	pl: Shorthand<"paddingLeft">;
-	pr: Shorthand<"paddingRight">;
-	pt: Shorthand<"paddingTop">;
-	pb: Shorthand<"paddingBottom">;
-	py: Shorthand<"paddingBlock">;
-	paddingY: Shorthand<"paddingBlock">;
-	paddingX: Shorthand<"paddingInline">;
-	px: Shorthand<"paddingInline">;
-	pe: Shorthand<"paddingInlineEnd">;
-	paddingEnd: Shorthand<"paddingInlineEnd">;
-	ps: Shorthand<"paddingInlineStart">;
-	paddingStart: Shorthand<"paddingInlineStart">;
-	ml: Shorthand<"marginLeft">;
-	mr: Shorthand<"marginRight">;
-	mt: Shorthand<"marginTop">;
-	mb: Shorthand<"marginBottom">;
-	m: Shorthand<"margin">;
-	my: Shorthand<"marginBlock">;
-	marginY: Shorthand<"marginBlock">;
-	mx: Shorthand<"marginInline">;
-	marginX: Shorthand<"marginInline">;
-	me: Shorthand<"marginInlineEnd">;
-	marginEnd: Shorthand<"marginInlineEnd">;
-	ms: Shorthand<"marginInlineStart">;
-	marginStart: Shorthand<"marginInlineStart">;
-	ringWidth: Shorthand<"outlineWidth">;
-	ringColor: Shorthand<"outlineColor">;
-	ring: Shorthand<"outline">;
-	ringOffset: Shorthand<"outlineOffset">;
-	w: Shorthand<"width">;
-	minW: Shorthand<"minWidth">;
-	maxW: Shorthand<"maxWidth">;
-	h: Shorthand<"height">;
-	minH: Shorthand<"minHeight">;
-	maxH: Shorthand<"maxHeight">;
-	bgPosition: Shorthand<"backgroundPosition">;
-	bgPositionX: Shorthand<"backgroundPositionX">;
-	bgPositionY: Shorthand<"backgroundPositionY">;
-	bgAttachment: Shorthand<"backgroundAttachment">;
-	bgClip: Shorthand<"backgroundClip">;
-	bg: Shorthand<"background">;
-	bgColor: Shorthand<"backgroundColor">;
-	bgOrigin: Shorthand<"backgroundOrigin">;
-	bgImage: Shorthand<"backgroundImage">;
-	bgRepeat: Shorthand<"backgroundRepeat">;
-	bgBlendMode: Shorthand<"backgroundBlendMode">;
-	bgSize: Shorthand<"backgroundSize">;
-	bgGradient: Shorthand<"backgroundGradient">;
-	rounded: Shorthand<"borderRadius">;
-	roundedTopLeft: Shorthand<"borderTopLeftRadius">;
-	roundedTopRight: Shorthand<"borderTopRightRadius">;
-	roundedBottomRight: Shorthand<"borderBottomRightRadius">;
-	roundedBottomLeft: Shorthand<"borderBottomLeftRadius">;
-	roundedTop: Shorthand<"borderTopRadius">;
-	roundedRight: Shorthand<"borderRightRadius">;
-	roundedBottom: Shorthand<"borderBottomRadius">;
-	roundedLeft: Shorthand<"borderLeftRadius">;
-	roundedStartStart: Shorthand<"borderStartStartRadius">;
-	roundedStartEnd: Shorthand<"borderStartEndRadius">;
-	roundedStart: Shorthand<"borderStartRadius">;
-	roundedEndStart: Shorthand<"borderEndStartRadius">;
-	roundedEndEnd: Shorthand<"borderEndEndRadius">;
-	roundedEnd: Shorthand<"borderEndRadius">;
-	borderX: Shorthand<"borderInline">;
-	borderXWidth: Shorthand<"borderInlineWidth">;
-	borderXColor: Shorthand<"borderInlineColor">;
-	borderY: Shorthand<"borderBlock">;
-	borderYWidth: Shorthand<"borderBlockWidth">;
-	borderYColor: Shorthand<"borderBlockColor">;
-	borderStart: Shorthand<"borderInlineStart">;
-	borderStartWidth: Shorthand<"borderInlineStartWidth">;
-	borderStartColor: Shorthand<"borderInlineStartColor">;
-	borderEnd: Shorthand<"borderInlineEnd">;
-	borderEndWidth: Shorthand<"borderInlineEndWidth">;
-	borderEndColor: Shorthand<"borderInlineEndColor">;
-	shadow: Shorthand<"boxShadow">;
-	shadowColor: Shorthand<"boxShadowColor">;
-	x: Shorthand<"translateX">;
-	y: Shorthand<"translateY">;
-}
+/**
+ * Only relevant when using `strictTokens` or `strictPropertyValues` in your config.
+ * - Allows you to use an escape hatch (e.g. `[123px]`) to use any string as a value.
+ * - Allows you to use a color opacity modifier (e.g. `red/300`) with known color values.
+ * - Allows you to use an important mark (e.g. `!` or `!important`) in the value.
+ *
+ * This is useful when you want to use a value that is not defined in the config or want to opt-out of the defaults.
+ *
+ * @example
+ * css({
+ *   fontSize: '[123px]', // ⚠️ will not throw even if you haven't defined 123px as a token
+ * })
+ *
+ * @see https://panda-css.com/docs/concepts/writing-styles#stricttokens
+ * @see https://panda-css.com/docs/concepts/writing-styles#strictpropertyvalues
+ */
+export type WithEscapeHatch<T> = T | `[${string}]` | WithColorOpacityModifier<T> | WithImportant<T>
 
-type FilterString<T> = T extends `${infer _}` ? T : never;
-export type PropertyValue<T extends string> = T extends keyof PropertyTypes
-  ? ConditionalValue<FilterString<PropertyTypes[T]>>
-  : T extends keyof CssProperties
-  ? ConditionalValue<FilterString<CssProperties[T]>>
-  : ConditionalValue<string | number>
+/**
+ * Will restrict the value of properties that have predefined values to those values only.
+ *
+ * @example
+ * css({
+ *   display: 'abc', // ❌ will throw
+ * })
+ *
+ * @see https://panda-css.com/docs/concepts/writing-styles#strictpropertyvalues
+ */
+export type OnlyKnown<Key, Value> = Value extends boolean
+  ? Value
+  : Value extends `${infer _}` ? Value : never

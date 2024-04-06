@@ -1,4 +1,28 @@
 const tokens = {
+  "aspectRatios.square": {
+    "value": "1 / 1",
+    "variable": "var(--aspect-ratios-square)"
+  },
+  "aspectRatios.landscape": {
+    "value": "4 / 3",
+    "variable": "var(--aspect-ratios-landscape)"
+  },
+  "aspectRatios.portrait": {
+    "value": "3 / 4",
+    "variable": "var(--aspect-ratios-portrait)"
+  },
+  "aspectRatios.wide": {
+    "value": "16 / 9",
+    "variable": "var(--aspect-ratios-wide)"
+  },
+  "aspectRatios.ultrawide": {
+    "value": "18 / 5",
+    "variable": "var(--aspect-ratios-ultrawide)"
+  },
+  "aspectRatios.golden": {
+    "value": "1.618 / 1",
+    "variable": "var(--aspect-ratios-golden)"
+  },
   "borders.none": {
     "value": "none",
     "variable": "var(--borders-none)"
@@ -1744,123 +1768,131 @@ const tokens = {
     "variable": "var(--breakpoints-2xl)"
   },
   "fonts.heading": {
-    "value": "var(--fonts-heading)",
+    "value": "var(--fonts-orbiter)",
     "variable": "var(--fonts-heading)"
   },
   "fonts.body": {
-    "value": "var(--fonts-body)",
+    "value": "var(--fonts-inter)",
     "variable": "var(--fonts-body)"
   },
   "fontSizes.header": {
-    "value": "var(--font-sizes-header)",
+    "value": "clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem)",
     "variable": "var(--font-sizes-header)"
   },
   "fontSizes.heading1": {
-    "value": "var(--font-sizes-heading1)",
+    "value": "2.027rem",
     "variable": "var(--font-sizes-heading1)"
   },
   "fontSizes.heading1.min": {
-    "value": "var(--font-sizes-heading1-min)",
+    "value": "2.027rem",
     "variable": "var(--font-sizes-heading1-min)"
   },
   "fontSizes.heading1.max": {
-    "value": "var(--font-sizes-heading1-max)",
+    "value": "2.986rem",
     "variable": "var(--font-sizes-heading1-max)"
   },
   "fontSizes.heading2": {
-    "value": "var(--font-sizes-heading2)",
+    "value": "1.802rem",
     "variable": "var(--font-sizes-heading2)"
   },
   "fontSizes.heading2.min": {
-    "value": "var(--font-sizes-heading2-min)",
+    "value": "1.802rem",
     "variable": "var(--font-sizes-heading2-min)"
   },
   "fontSizes.heading2.max": {
-    "value": "var(--font-sizes-heading2-max)",
+    "value": "2.488rem",
     "variable": "var(--font-sizes-heading2-max)"
   },
   "fontSizes.heading3": {
-    "value": "var(--font-sizes-heading3)",
+    "value": "1.602rem",
     "variable": "var(--font-sizes-heading3)"
   },
   "fontSizes.heading3.min": {
-    "value": "var(--font-sizes-heading3-min)",
+    "value": "1.602rem",
     "variable": "var(--font-sizes-heading3-min)"
   },
   "fontSizes.heading3.max": {
-    "value": "var(--font-sizes-heading3-max)",
+    "value": "2.074rem",
     "variable": "var(--font-sizes-heading3-max)"
   },
   "fontSizes.heading4": {
-    "value": "var(--font-sizes-heading4)",
+    "value": "1.424rem",
     "variable": "var(--font-sizes-heading4)"
   },
   "fontSizes.heading4.min": {
-    "value": "var(--font-sizes-heading4-min)",
+    "value": "1.424rem",
     "variable": "var(--font-sizes-heading4-min)"
   },
   "fontSizes.heading4.max": {
-    "value": "var(--font-sizes-heading4-max)",
+    "value": "1.728rem",
     "variable": "var(--font-sizes-heading4-max)"
   },
   "fontSizes.heading5": {
-    "value": "var(--font-sizes-heading5)",
+    "value": "1.266rem",
     "variable": "var(--font-sizes-heading5)"
   },
   "fontSizes.heading5.min": {
-    "value": "var(--font-sizes-heading5-min)",
+    "value": "1.266rem",
     "variable": "var(--font-sizes-heading5-min)"
   },
   "fontSizes.heading5.max": {
-    "value": "var(--font-sizes-heading5-max)",
+    "value": "1.44rem",
     "variable": "var(--font-sizes-heading5-max)"
   },
   "fontSizes.heading6": {
-    "value": "var(--font-sizes-heading6)",
+    "value": "1.125rem",
     "variable": "var(--font-sizes-heading6)"
   },
   "fontSizes.heading6.min": {
-    "value": "var(--font-sizes-heading6-min)",
+    "value": "1.125rem",
     "variable": "var(--font-sizes-heading6-min)"
   },
   "fontSizes.heading6.max": {
-    "value": "var(--font-sizes-heading6-max)",
+    "value": "1.2rem",
     "variable": "var(--font-sizes-heading6-max)"
   },
   "fontSizes.body": {
-    "value": "var(--font-sizes-body)",
+    "value": "1rem",
     "variable": "var(--font-sizes-body)"
   },
   "fontSizes.body.min": {
-    "value": "var(--font-sizes-body-min)",
+    "value": "1rem",
     "variable": "var(--font-sizes-body-min)"
   },
   "fontSizes.body.max": {
-    "value": "var(--font-sizes-body-max)",
+    "value": "1.1rem",
     "variable": "var(--font-sizes-body-max)"
   },
   "fontSizes.small": {
-    "value": "var(--font-sizes-small)",
+    "value": "0.9rem",
     "variable": "var(--font-sizes-small)"
   },
   "fontSizes.small.min": {
-    "value": "var(--font-sizes-small-min)",
+    "value": "0.9rem",
     "variable": "var(--font-sizes-small-min)"
   },
   "fontSizes.small.max": {
-    "value": "var(--font-sizes-small-max)",
+    "value": "0.95rem",
     "variable": "var(--font-sizes-small-max)"
   },
+  "spacing.sm": {
+    "value": "var(--spacing-2)",
+    "variable": "var(--spacing-sm)"
+  },
+  "spacing.sm.fluid": {
+    "value": "clamp(var(--spacing-2), 2vw, var(--spacing-48))",
+    "variable": "var(--spacing-sm-fluid)"
+  },
   "spacing.md": {
-    "value": "var(--spacing-md)",
+    "value": "var(--spacing-4)",
     "variable": "var(--spacing-md)"
   },
   "spacing.md.fluid": {
-    "value": "var(--spacing-md-fluid)",
+    "value": "clamp(var(--spacing-4), 4vw, var(--spacing-96))",
     "variable": "var(--spacing-md-fluid)"
   },
   "lineHeights.headingFluid": {
-    "value": "var(--line-heights-heading-fluid)",
+    "value": "calc(130px - clamp(0px, 6vw, 70px))",
     "variable": "var(--line-heights-heading-fluid)"
   },
   "colors.fg": {
@@ -1892,7 +1924,7 @@ const tokens = {
     "variable": "var(--colors-link)"
   },
   "borders.dotted": {
-    "value": "var(--borders-dotted)",
+    "value": "1px dashed var(--colors-fg-subtle)",
     "variable": "var(--borders-dotted)"
   },
   "spacing.-1": {
@@ -2027,12 +2059,20 @@ const tokens = {
     "value": "calc(var(--spacing-3\\.5) * -1)",
     "variable": "var(--spacing-3\\.5)"
   },
+  "spacing.-sm": {
+    "value": "calc(var(--spacing-sm) * -1)",
+    "variable": "var(--spacing-sm)"
+  },
+  "spacing.sm.-fluid": {
+    "value": "calc(var(--spacing-sm-fluid) * -1)",
+    "variable": "var(--spacing-sm-fluid)"
+  },
   "spacing.-md": {
-    "value": "var(--spacing-md)",
+    "value": "calc(var(--spacing-md) * -1)",
     "variable": "var(--spacing-md)"
   },
   "spacing.md.-fluid": {
-    "value": "var(--spacing-md-fluid)",
+    "value": "calc(var(--spacing-md-fluid) * -1)",
     "variable": "var(--spacing-md-fluid)"
   },
   "colors.colorPalette": {

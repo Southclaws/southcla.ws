@@ -1,4 +1,4 @@
-import { getPosts } from "@/misc/markdown";
+import { getPosts } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
 import Link from "next/link";
 import { Career } from "../../misc/Career";
@@ -41,9 +41,9 @@ export default async function Home() {
           gap="2"
         >
           {posts.map((v) => (
-            <styled.li key={v.path} margin="0">
-              <Link className="link" href={`/${v.path}`}>
-                {v.meta?.title}
+            <styled.li key={v.slug} margin="0">
+              <Link className="link" href={`/${v.slug}`}>
+                {v.metadata.title}
               </Link>
             </styled.li>
           ))}

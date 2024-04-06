@@ -1,3 +1,8 @@
+---
+title: How to diagnose Hydration failed because the initial UI does not match what was rendered on the server.
+date: 2023-12-27
+---
+
 # How to diagnose Error: Hydration failed because the initial UI does not match what was rendered on the server.
 
 This happens when the server renders one tree and the client hydrates to a different tree.
@@ -18,11 +23,9 @@ For example, this is the resulting HTML rendered in the browser from a mistake I
 
 ```html
 <button id="menu::R9mnnnjbqkq::trigger">
-    <button class="button">
-        <svg>
-            ...
-        </svg>
-    </button>
+  <button class="button">
+    <svg>...</svg>
+  </button>
 </button>
 ```
 
@@ -37,9 +40,7 @@ And the reason this causes the hydration error is because this issue is actually
 ```html
 <button id="menu::R9mnnnjbqkq::trigger"></button>
 <button class="button">
-    <svg>
-        ...
-    </svg>
+  <svg>...</svg>
 </button>
 ```
 
