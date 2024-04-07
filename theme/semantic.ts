@@ -59,9 +59,17 @@ export const semanticTokens = defineSemanticTokens({
       },
     },
     link: {
-      value: {
-        base: "{colors.accent.500}",
-        _osDark: "{colors.accent.800}",
+      DEFAULT: {
+        value: {
+          base: "{colors.accent.500}",
+          _osDark: "{colors.accent.600}",
+        },
+      },
+      hover: {
+        value: {
+          base: "{colors.accent.400}",
+          _osDark: "{colors.accent.500}",
+        },
       },
     },
   },

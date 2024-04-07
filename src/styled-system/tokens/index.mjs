@@ -1991,6 +1991,10 @@ const tokens = {
     "value": "var(--colors-link)",
     "variable": "var(--colors-link)"
   },
+  "colors.link.hover": {
+    "value": "var(--colors-link-hover)",
+    "variable": "var(--colors-link-hover)"
+  },
   "borders.dotted": {
     "value": "1px dashed var(--colors-fg-muted)",
     "variable": "var(--borders-dotted)"
@@ -2194,6 +2198,10 @@ const tokens = {
   "colors.colorPalette.muted": {
     "value": "var(--colors-color-palette-muted)",
     "variable": "var(--colors-color-palette-muted)"
+  },
+  "colors.colorPalette.hover": {
+    "value": "var(--colors-color-palette-hover)",
+    "variable": "var(--colors-color-palette-hover)"
   }
 }
 
