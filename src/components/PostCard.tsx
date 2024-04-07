@@ -14,10 +14,10 @@ export function PostCard({ post }: Props) {
         <Link href={`/${post.slug}`}>{post.metadata.title}</Link>
       </styled.h1>
 
-      <styled.time color="fg.muted">
+      <time>
         written{" "}
         {formatDistanceToNow(post.metadata.timestamp, { addSuffix: true })}
-      </styled.time>
+      </time>
 
       <styled.p m="0">{post.metadata.subtitle}</styled.p>
     </styled.article>

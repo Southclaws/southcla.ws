@@ -1,5 +1,6 @@
 import { getContent } from "@/content/content";
 import { VStack } from "@/styled-system/jsx";
+import { formatDistanceToNow } from "date-fns";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -16,13 +17,26 @@ export default async function Page(props: Props) {
   }
 
   try {
-    const content = await getContent(props.params.post);
+    const { content, metadata } = await getContent(props.params.post);
 
     return (
       <VStack className="typography" w="full" alignItems="start">
-        <h1>{content.metadata.title}</h1>
+        <VStack w="full" alignItems="start" gap="1" pb="6">
+          <h1>{metadata.title}</h1>
 
-        {content.content}
+          <aside>
+            <p>{metadata.subtitle}</p>
+          </aside>
+
+          <time>
+            written{" "}
+            {formatDistanceToNow(metadata.timestamp, { addSuffix: true })}
+          </time>
+
+          <hr />
+        </VStack>
+
+        {content}
       </VStack>
     );
   } catch (e) {
