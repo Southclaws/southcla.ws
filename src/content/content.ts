@@ -27,10 +27,8 @@ export const FrontmatterSchema = z.object({
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;
 
 export async function getContent(slug: string) {
-  const source = await readFile(
-    path.join(cwd(), "pages", slug ?? "index") + ".md",
-    "utf-8"
-  );
+  const filepath = path.join(cwd(), "pages", slug ?? "index") + ".md";
+  const source = await readFile(filepath);
 
   const { content, frontmatter } = await compileMDX({
     source,
@@ -56,8 +54,6 @@ export async function getPosts() {
       return { metadata, slug };
     })
   );
-
-  console.log(paths, posts);
 
   return posts;
 }
