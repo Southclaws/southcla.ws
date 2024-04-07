@@ -15,6 +15,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </Link>
 
       {children}
+
+      <hr />
     </styled.article>
   );
 }
