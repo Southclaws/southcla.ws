@@ -4,6 +4,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 import { cwd } from "process";
 import { z } from "zod";
+import { useMDXComponents } from "./mdx-components";
 
 export type Post = PostReference & {
   content: any;
@@ -49,7 +50,7 @@ export async function getContent(slug: string): Promise<Post> {
     options: {
       parseFrontmatter: true,
     },
-    components: {},
+    components: useMDXComponents({}),
   });
 
   const postmeta = FrontmatterSchema.parse(frontmatter);

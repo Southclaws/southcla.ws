@@ -4,9 +4,11 @@ import { ReactElement } from "react";
 import { refractor } from "refractor";
 import css from "refractor/lang/css.js";
 import tsx from "refractor/lang/tsx";
+import go from "refractor/lang/go";
 
 refractor.register(css);
 refractor.register(tsx);
+refractor.register(go);
 
 const allLanguages = Object.fromEntries(
   refractor.listLanguages().map((v) => [v, true])
@@ -19,6 +21,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       const content = childProps.props.children;
       const className = childProps.props["className"];
       const language = className?.replace("language-", "") ?? "";
+
+      console.log({
+        content,
+        className,
+        language,
+        allLanguages,
+      });
 
       if (language && allLanguages[language]) {
         const tree = refractor.highlight(content, language);
@@ -36,7 +45,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </pre>
       );
     },
-    a: (props) => <a className="link" target="_blank" {...props} />,
+    a: (props) => <a target="_blank" {...props} />,
     code: (props) => <code>{props.children}</code>,
     ...components,
   };

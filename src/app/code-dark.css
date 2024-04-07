@@ -7,7 +7,7 @@
 
     code[class*="language-"],
     pre[class*="language-"] {
-      background: var(--colors-bg-subtle);
+      background: var(--colors-bg-muted);
       color: hsl(220, 14%, 71%);
       text-shadow: 0 1px rgba(0, 0, 0, 0.3);
       font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono",
