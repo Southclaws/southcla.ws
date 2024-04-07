@@ -1,5 +1,6 @@
 ---
 title: How to diagnose Hydration failed
+subtitle: One of the most common root causes of the error "Hydration failed because the initial UI does not match what was rendered on the server" with Next.js
 ---
 
 This happens when the server renders one tree and the client hydrates to a different tree.

@@ -1,5 +1,6 @@
 ---
 title: How does YouTube's blurry background work?
+subtitle: A little investigation into a subtle YouTube feature I noticed one day.
 ---
 
 If you've watched a YouTube video recently, on web or the mobile app, you might have noticed that behind the video there's a slight splash of colour behind the video that spreads all the way up to the search bar.
