@@ -3,8 +3,6 @@ title: How does YouTube's blurry background work?
 date: 2023-12-12T07:24:30Z
 ---
 
-# How does YouTube's blurry background work?
-
 If you've watched a YouTube video recently, on web or the mobile app, you might have noticed that behind the video there's a slight splash of colour behind the video that spreads all the way up to the search bar.
 
 ![2023-12-12-07-30-32](/images/2023-12-12-07-30-32.png)
@@ -71,8 +69,8 @@ I think its done this way for a few reasons:
 
 And how it's working beyond the `<canvas>` I think:
 
-- when the video is uploaded, YouTube grabs a small amount of dominant colours every 5 seconds - 32 is my guess (a 4 * x grid)
-- when someone loads a video page, this data is also loaded - it would be very small, 4 bytes per colour (RGBA) * 32 colours * (seconds of video / 5 seconds) = 7kb for a 5 minute video roughly.
+- when the video is uploaded, YouTube grabs a small amount of dominant colours every 5 seconds - 32 is my guess (a 4 \* x grid)
+- when someone loads a video page, this data is also loaded - it would be very small, 4 bytes per colour (RGBA) _ 32 colours _ (seconds of video / 5 seconds) = 7kb for a 5 minute video roughly.
 - the `<canvas>` elements are both drawn from the same data, but one is offset by 5 seconds.
 
 And notable things:
@@ -89,25 +87,35 @@ Based on browsing the code for 5 minutes, they're using [CanvasRenderingContext2
 
 ```js
 function bBc() {
-  return !("filter"in CanvasRenderingContext2D.prototype) || H("kevlar_watch_cinematics_css_blur")
+  return (
+    !("filter" in CanvasRenderingContext2D.prototype) ||
+    H("kevlar_watch_cinematics_css_blur")
+  );
 }
 ```
 
 And blurring by about 40px:
 
 ```js
-var cBc = function(a) {
-    a.ambientV2Container ? hBc(a) : (Hh(a.container, {
+var cBc = function (a) {
+  a.ambientV2Container
+    ? hBc(a)
+    : (Hh(a.container, {
         position: "absolute",
         top: "0",
         left: "0",
         right: "0",
         bottom: "0",
         "pointer-events": "none",
-        transform: "scale(" + iBc(a) + ", " + jBc(a) + ")"
-    }),
-    bBc() && Hh(a.container, "filter", "blur(" + zl("cinematic_watch_css_filter_blur_strength", 40) + "px)"))
-}
+        transform: "scale(" + iBc(a) + ", " + jBc(a) + ")",
+      }),
+      bBc() &&
+        Hh(
+          a.container,
+          "filter",
+          "blur(" + zl("cinematic_watch_css_filter_blur_strength", 40) + "px)"
+        ));
+};
 ```
 
 I'd recommend [MDN's Canvas tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial) to get to grips with the basics of canvas. It's a very powerful tool and pretty much powers any highly interactive web experience from image editors to 3D rendering.

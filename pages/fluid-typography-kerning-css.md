@@ -3,8 +3,6 @@ title: Fluid typography kerning in CSS
 date: 2023-09-24T09:32:12Z
 ---
 
-# Fluid typography kerning in CSS
-
 > Taking fluid typography one step further by meticulously controlling kerning pairs.
 
 ![2024-04-06-18-45-54](/images/2024-04-06-18-45-54.png)

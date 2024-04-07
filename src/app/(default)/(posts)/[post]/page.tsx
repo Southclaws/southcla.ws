@@ -1,4 +1,5 @@
 import { getContent } from "@/content/content";
+import { VStack } from "@/styled-system/jsx";
 
 type Props = {
   params: {
@@ -9,5 +10,11 @@ type Props = {
 export default async function Page(props: Props) {
   const content = await getContent(props.params.post);
 
-  return <>{content.content}</>;
+  return (
+    <VStack>
+      <h1>{content.metadata.title}</h1>
+
+      {content.content}
+    </VStack>
+  );
 }

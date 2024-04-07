@@ -3,8 +3,6 @@ title: The Stockholm Syndrome of SQL
 date: 2022-06-26T00:00:00Z
 ---
 
-# The Stockholm Syndrome of SQL
-
 _Why Relational Databases Need a Diverse Competitive Ecosystem of Query Interfaces_
 
 > This is part 1 of a series analysing the relational database landscape and criticising the design of Structured Query Language.

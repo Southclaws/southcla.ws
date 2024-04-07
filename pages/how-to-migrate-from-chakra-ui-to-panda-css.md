@@ -3,8 +3,6 @@ title: Migrating from Chakra UI to Panda CSS
 date: 2023-12-08T16:56:30Z
 ---
 
-# Migrating from Chakra UI to Panda CSS
-
 In this article I'll be covering the motivations behind why I'm adopting Panda CSS for my frontend work, how it compares to Chakra UI, and how you can migrate from Chakra UI to Panda CSS gradually as well as what kind of work is required to maintain both in the same codebase for a period of time.
 
 ![The Chakra UI logo with a curly arrow pointing to the Panda CSS logo](images/chakra-to-panda.png)
@@ -18,33 +16,33 @@ Panda CSS is a new utility-first CSS framework. Now you might be thinking "oh so
 But it retains the unrivaled (in my opinion) developer experience of style props, for example:
 
 ```tsx
-<styled.article         
-  className="content"   
-  display="flex"        
-  flexDir="column"      
-  gap="8"               
-  w="full"              
-  overflow="hidden"     
->                      
+<styled.article
+  className="content"
+  display="flex"
+  flexDir="column"
+  gap="8"
+  w="full"
+  overflow="hidden"
+>
 ```
 
 becomes these utility classes:
 
 ```css
 .d_flex {
-  display: flex
+  display: flex;
 }
 .flex_column {
-  flex-direction: column
+  flex-direction: column;
 }
 .gap_8 {
-  gap: var(--spacing-8)
+  gap: var(--spacing-8);
 }
 .w_full {
-  width: var(--sizes-full)
+  width: var(--sizes-full);
 }
 .overflow_hidden {
-  overflow: hidden
+  overflow: hidden;
 }
 ```
 
@@ -59,6 +57,7 @@ https://www.adebayosegun.com/blog/chakra-panda-ark-whats-the-plan
 Now, Chakra UI is fairly similar so why might you want to change? If you've come across this article from a Google search, perhaps you've already made the decision and understand the why and are only interested in the what and how. If that's the case, feel free to skip forward.
 
 It boils down to three reasons:
+
 - Outgrown somewhat, I'm hitting roadblocks more often
 - Feels bloated, lots of client side JS with Emotion
 - Need a static solution for Storyden's on-prem use-case
@@ -67,7 +66,7 @@ I work on a few frontend projects ranging from small, mostly static, landing pag
 
 Among all of my work, I value simple pipelines and isolated complexity. Complexity is always present and managing it is the difference between a dead "side project" and a successful product.
 
-Chakra served me very well and it will continue to do so for some projects but with products like Odin and Storyden that I'm going to customise all the components anyway *and* I want small static CSS and minimal runtime impact, Panda just makes more sense.
+Chakra served me very well and it will continue to do so for some projects but with products like Odin and Storyden that I'm going to customise all the components anyway _and_ I want small static CSS and minimal runtime impact, Panda just makes more sense.
 
 If you want to read the first Storyden PR that started the migration, that's here: https://github.com/Southclaws/storyden/pull/30
 
@@ -77,7 +76,7 @@ This is the one that got me started exploring alternatives to Chakra. The main t
 
 https://www.joshwcomeau.com/react/server-components/
 
-What confused me at first was RSC, SSR and "use client", which this article covers very well! The short version is: Chakra UI still supports server side *rendering*, but not server *components*. Which means I can't make use of certain component tree optimisations and features mentioned in the above article.
+What confused me at first was RSC, SSR and "use client", which this article covers very well! The short version is: Chakra UI still supports server side _rendering_, but not server _components_. Which means I can't make use of certain component tree optimisations and features mentioned in the above article.
 
 The reason for this is that Chakra UI uses [Emotion](https://emotion.sh/) for styling, which is a CSS-in-JS library. It's great, I've used it for years, but it's not compatible with RSC for various reasons.
 
@@ -104,8 +103,6 @@ The other reason is that Chakra has been getting in the way a bit more recently,
 Panda, being mostly built on the ideas of CSS variables, design tokens and code generation felt much simpler. And now that I've migrated or been involved in the migration of about 4 and a half codebases, I can safely say it is.
 
 ## Migrating
-
-
 
 Alright let's get to the good bit. How do you migrate from Chakra UI to Panda CSS?
 
@@ -385,7 +382,7 @@ It also has "strict" mode which essentially means that you cannot use ad-hoc sty
 
 Did you ever `border={isClicked ? "brand.blue" : "grey.200"}` I did. It's nice, but realistically speaking what you're looking at here is a JavaScript branch expression. And I promise this isn't tin-foil-hat-javascript-fear but it's using procedural constructs to encode a semantic that already exists in CSS.
 
-I'd rather use the tool for the job, a `[data-clicked="true"]` selector. Panda is great at setting these up and it's as simple as `_clicked="brand.blue". Which generates purely static CSS. All you need to do is add the data attribute to your component when the time is right. The styling state change is then entirely handled by the browser, declaratively, via the stylesheet.
+I'd rather use the tool for the job, a `[data-clicked="true"]` selector. Panda is great at setting these up and it's as simple as `\_clicked="brand.blue". Which generates purely static CSS. All you need to do is add the data attribute to your component when the time is right. The styling state change is then entirely handled by the browser, declaratively, via the stylesheet.
 
 This means less state for you to worry about, less expressions being evaluated and ultimately, less code to maintain.
 
@@ -416,9 +413,9 @@ And use it in a component:
 The CSS applied to this component is invalid:
 
 ```css
-  .text_oops {
-    color: var(--colors-oops)
-    }
+.text_oops {
+  color: var(--colors-oops);
+}
 ```
 
 And you can see the variable name is greyed out in the inspector:
@@ -437,7 +434,7 @@ When I ran into the above issue with invalid token names, I accidentally shipped
 
 ```css
 .md\:min-w_md {
-  min-width: container.md
+  min-width: container.md;
 }
 ```
 

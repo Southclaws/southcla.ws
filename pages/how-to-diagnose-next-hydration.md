@@ -1,9 +1,7 @@
 ---
-title: How to diagnose Hydration failed because the initial UI does not match what was rendered on the server.
+title: How to diagnose Hydration failed
 date: 2023-12-27
 ---
-
-# How to diagnose Error: Hydration failed because the initial UI does not match what was rendered on the server.
 
 This happens when the server renders one tree and the client hydrates to a different tree.
 
