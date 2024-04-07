@@ -24,6 +24,12 @@ export const semanticTokens = defineSemanticTokens({
     offblack: {
       value: "{colors.offblack.600}",
     },
+    accent: {
+      value: {
+        base: "{colors.accent.500}",
+        _osDark: "{colors.accent.800}",
+      },
+    },
     fg: {
       DEFAULT: {
         value: {

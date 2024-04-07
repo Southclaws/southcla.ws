@@ -1,5 +1,6 @@
 import { PostReference } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
+import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 
 type Props = {
@@ -13,7 +14,12 @@ export function PostCard({ post }: Props) {
         <Link href={`/${post.slug}`}>{post.metadata.title}</Link>
       </styled.h1>
 
-      <p>{post.metadata.subtitle}</p>
+      <styled.time color="fg.muted">
+        written{" "}
+        {formatDistanceToNow(post.metadata.timestamp, { addSuffix: true })}
+      </styled.time>
+
+      <styled.p m="0">{post.metadata.subtitle}</styled.p>
     </styled.article>
   );
 }

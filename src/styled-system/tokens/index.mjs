@@ -1967,6 +1967,10 @@ const tokens = {
     "value": "var(--colors-offblack-600)",
     "variable": "var(--colors-offblack)"
   },
+  "colors.accent": {
+    "value": "var(--colors-accent)",
+    "variable": "var(--colors-accent)"
+  },
   "colors.fg": {
     "value": "var(--colors-fg)",
     "variable": "var(--colors-fg)"
