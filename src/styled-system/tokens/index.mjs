@@ -1988,7 +1988,7 @@ const tokens = {
     "variable": "var(--colors-link)"
   },
   "borders.dotted": {
-    "value": "1px dashed var(--colors-fg-subtle)",
+    "value": "1px dashed var(--colors-fg-muted)",
     "variable": "var(--borders-dotted)"
   },
   "spacing.-1": {

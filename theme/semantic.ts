@@ -63,7 +63,7 @@ export const semanticTokens = defineSemanticTokens({
     dotted: {
       value: {
         width: "1",
-        color: "{colors.fg.subtle}",
+        color: "{colors.fg.muted}",
         style: "dashed",
       },
     },
