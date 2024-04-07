@@ -1,9 +1,12 @@
 ---
 title: How to diagnose Hydration failed
-date: 2023-12-27
 ---
 
 This happens when the server renders one tree and the client hydrates to a different tree.
+
+```
+Hydration failed because the initial UI does not match what was rendered on the server
+```
 
 The most common tutorials and even the Next.js docs talk about useEffect and mistakes relating to client/server code around interactive components.
 

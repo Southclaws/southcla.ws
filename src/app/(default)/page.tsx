@@ -1,3 +1,4 @@
+import { PostCardList } from "@/components/PostCardList";
 import { getPosts } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export default async function Home() {
       <Career date={new Date()} />
       <p>this site is a never-ending exploration into the details.</p>
 
-      <styled.nav display="flex" flexDir="column" gap="2">
+      <styled.nav display="flex" flexDir="column" gap="4">
         <styled.ul
           listStyle="none"
           margin="0"
@@ -33,21 +34,7 @@ export default async function Home() {
           </styled.li>
         </styled.ul>
 
-        <styled.ul
-          listStyle="none"
-          margin="0"
-          display="flex"
-          flexDir="column"
-          gap="2"
-        >
-          {posts.map((v) => (
-            <styled.li key={v.slug} margin="0">
-              <Link className="link" href={`/${v.slug}`}>
-                {v.metadata.title}
-              </Link>
-            </styled.li>
-          ))}
-        </styled.ul>
+        <PostCardList posts={posts} />
       </styled.nav>
     </>
   );

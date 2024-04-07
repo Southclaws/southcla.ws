@@ -1,6 +1,5 @@
 ---
 title: Migrating from Chakra UI to Panda CSS
-date: 2023-12-08T16:56:30Z
 ---
 
 In this article I'll be covering the motivations behind why I'm adopting Panda CSS for my frontend work, how it compares to Chakra UI, and how you can migrate from Chakra UI to Panda CSS gradually as well as what kind of work is required to maintain both in the same codebase for a period of time.

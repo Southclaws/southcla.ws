@@ -5,30 +5,44 @@ import path from "path";
 import { cwd } from "process";
 import { z } from "zod";
 
-type Post = {
-  metadata: Frontmatter;
+export type Post = PostReference & {
+  content: any;
+};
+
+export type PostReference = {
+  metadata: Metadata;
   slug: string;
 };
 
-export type PageParameters = {
-  slug: string;
-};
-
-export type ContentPageProps = {
-  params: PageParameters;
-  searchParams: Record<string, string | string[]>;
+export type Metadata = Frontmatter & {
+  timestamp: Date;
 };
 
 export const FrontmatterSchema = z.object({
   title: z.string(),
-  description: z.string().optional(),
-  date: z.date(),
+  subtitle: z.string().optional(),
+  hero: z.string().optional(),
 });
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;
 
-export async function getContent(slug: string) {
-  const filepath = path.join(cwd(), "pages", slug ?? "index") + ".md";
-  const source = await readFile(filepath);
+export async function getContent(slug: string): Promise<Post> {
+  const root = path.join(cwd(), "pages");
+  const filenamePattern = `* ${slug}.md`;
+  const filepathPattern = path.join(root, filenamePattern);
+
+  const results = await glob(filepathPattern);
+
+  if (results.length !== 1) {
+    throw new Error(`Unable to find file with pattern ${filenamePattern}`);
+  }
+
+  const filepath = path.parse(results[0]);
+  const filename = filepath.base;
+  const fullpath = path.join(root, filename);
+
+  const { timestamp } = splitFilename(filename);
+
+  const source = await readFile(fullpath);
 
   const { content, frontmatter } = await compileMDX({
     source,
@@ -38,22 +52,37 @@ export async function getContent(slug: string) {
     components: {},
   });
 
-  const metadata = FrontmatterSchema.parse(frontmatter);
+  const postmeta = FrontmatterSchema.parse(frontmatter);
 
-  return { content, metadata };
+  const metadata = {
+    ...postmeta,
+    timestamp,
+  } satisfies Metadata;
+
+  return { content, metadata, slug };
 }
 
-export async function getPosts() {
+export async function getPosts(): Promise<PostReference[]> {
   const paths = await glob("./pages/*.md");
 
   const posts = await Promise.all(
     paths.map(async (file) => {
-      const slug = path.parse(file).name;
-      const { metadata } = await getContent(slug);
+      const filename = path.parse(file).name;
+      const { name } = splitFilename(filename);
 
-      return { metadata, slug };
+      const { slug, metadata } = await getContent(name);
+
+      return { metadata, slug } satisfies PostReference;
     })
   );
 
   return posts;
+}
+
+// Expects a full file name, not a slug. Including the extension: ".md"
+function splitFilename(filename: string) {
+  const [date, name] = filename.split(" ");
+  const timestamp = new Date(date);
+
+  return { name, timestamp };
 }

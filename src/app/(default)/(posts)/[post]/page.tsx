@@ -1,5 +1,6 @@
 import { getContent } from "@/content/content";
 import { VStack } from "@/styled-system/jsx";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -8,13 +9,25 @@ type Props = {
 };
 
 export default async function Page(props: Props) {
-  const content = await getContent(props.params.post);
+  if (props.params.post === "favicon.ico") {
+    // TODO: Figure out why Next.js isn't providing this file before running
+    // the route handler.
+    return null;
+  }
 
-  return (
-    <VStack>
-      <h1>{content.metadata.title}</h1>
+  try {
+    const content = await getContent(props.params.post);
 
-      {content.content}
-    </VStack>
-  );
+    return (
+      <VStack className="typography" w="full" alignItems="start">
+        <h1>{content.metadata.title}</h1>
+
+        {content.content}
+      </VStack>
+    );
+  } catch (e) {
+    console.error(e);
+
+    notFound();
+  }
 }

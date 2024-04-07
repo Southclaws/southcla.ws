@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Hedvig_Letters_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -16,6 +16,12 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const hedvig = Hedvig_Letters_Serif({
+  subsets: ["latin"],
+  preload: true,
+  variable: "--font-hedvig",
+});
+
 export const metadata: Metadata = {
   title: "barney's tech blog | southclaws",
   description:
@@ -29,7 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${orbiter.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${orbiter.variable} ${inter.variable} ${hedvig.variable}`}
+    >
       <body>{children}</body>
       <Analytics />
     </html>

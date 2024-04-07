@@ -699,6 +699,10 @@ const tokens = {
     "value": "var(--font-inter)",
     "variable": "var(--fonts-inter)"
   },
+  "fonts.hedvig": {
+    "value": "var(--font-hedvig)",
+    "variable": "var(--fonts-hedvig)"
+  },
   "colors.current": {
     "value": "currentColor",
     "variable": "var(--colors-current)"
@@ -1683,68 +1687,124 @@ const tokens = {
     "value": "#020617",
     "variable": "var(--colors-slate-950)"
   },
-  "colors.offwhite": {
-    "value": "hsl(40deg 100% 99%)",
-    "variable": "var(--colors-offwhite)"
+  "colors.offwhite.50": {
+    "value": "hsl(40.432000000000016 0% 60%)",
+    "variable": "var(--colors-offwhite-50)"
   },
-  "colors.offwhite.muted": {
-    "value": "hsl(35deg 3% 74%)",
-    "variable": "var(--colors-offwhite-muted)"
+  "colors.offwhite.100": {
+    "value": "hsl(39.952 0.16460905349794236% 61.20614758428184%)",
+    "variable": "var(--colors-offwhite-100)"
   },
-  "colors.offwhite.subtle": {
-    "value": "hsl(30deg 5% 92%)",
-    "variable": "var(--colors-offwhite-subtle)"
+  "colors.offwhite.200": {
+    "value": "hsl(39.47199999999998 1.3168724279835389% 64.67911113762044%)",
+    "variable": "var(--colors-offwhite-200)"
   },
-  "colors.offblack": {
-    "value": "hsl(222deg 18% 25%)",
-    "variable": "var(--colors-offblack)"
+  "colors.offwhite.300": {
+    "value": "hsl(38.99200000000002 4.444444444444444% 70%)",
+    "variable": "var(--colors-offwhite-300)"
   },
-  "colors.offblack.muted": {
-    "value": "hsl(222deg 12% 32%)",
-    "variable": "var(--colors-offblack-muted)"
+  "colors.offwhite.400": {
+    "value": "hsl(38.512 10.534979423868311% 76.52703644666138%)",
+    "variable": "var(--colors-offwhite-400)"
   },
-  "colors.offblack.subtle": {
-    "value": "hsl(282deg 11% 29%)",
-    "variable": "var(--colors-offblack-subtle)"
+  "colors.offwhite.500": {
+    "value": "hsl(38.03199999999998 19.46502057613169% 83.4729635533386%)",
+    "variable": "var(--colors-offwhite-500)"
+  },
+  "colors.offwhite.600": {
+    "value": "hsl(37.55200000000002 25.555555555555554% 89.99999999999999%)",
+    "variable": "var(--colors-offwhite-600)"
+  },
+  "colors.offwhite.700": {
+    "value": "hsl(37.072 28.68312757201646% 95.32088886237956%)",
+    "variable": "var(--colors-offwhite-700)"
+  },
+  "colors.offwhite.800": {
+    "value": "hsl(36.591999999999985 29.835390946502056% 98.79385241571816%)",
+    "variable": "var(--colors-offwhite-800)"
+  },
+  "colors.offwhite.900": {
+    "value": "hsl(36.11200000000002 30% 100%)",
+    "variable": "var(--colors-offwhite-900)"
+  },
+  "colors.offblack.50": {
+    "value": "hsl(204 35% 40%)",
+    "variable": "var(--colors-offblack-50)"
+  },
+  "colors.offblack.100": {
+    "value": "hsl(208 34.89026063100137% 39.24615775982386%)",
+    "variable": "var(--colors-offblack-100)"
+  },
+  "colors.offblack.200": {
+    "value": "hsl(212 34.122085048010966% 37.075555538987224%)",
+    "variable": "var(--colors-offblack-200)"
+  },
+  "colors.offblack.300": {
+    "value": "hsl(216 32.03703703703704% 33.75%)",
+    "variable": "var(--colors-offblack-300)"
+  },
+  "colors.offblack.400": {
+    "value": "hsl(220 27.976680384087793% 29.670602220836635%)",
+    "variable": "var(--colors-offblack-400)"
+  },
+  "colors.offblack.500": {
+    "value": "hsl(224 22.023319615912207% 25.329397779163376%)",
+    "variable": "var(--colors-offblack-500)"
+  },
+  "colors.offblack.600": {
+    "value": "hsl(228 17.962962962962962% 21.250000000000004%)",
+    "variable": "var(--colors-offblack-600)"
+  },
+  "colors.offblack.700": {
+    "value": "hsl(232 15.877914951989025% 17.92444446101278%)",
+    "variable": "var(--colors-offblack-700)"
+  },
+  "colors.offblack.800": {
+    "value": "hsl(236 15.109739368998628% 15.753842240176146%)",
+    "variable": "var(--colors-offblack-800)"
+  },
+  "colors.offblack.900": {
+    "value": "hsl(240 15% 15.000000000000002%)",
+    "variable": "var(--colors-offblack-900)"
   },
   "colors.accent.50": {
-    "value": "hsl(28deg 50% 95%)",
+    "value": "hsl(44.160000000000025 23% 2%)",
     "variable": "var(--colors-accent-50)"
   },
   "colors.accent.100": {
-    "value": "hsl(64deg 31% 12%)",
+    "value": "hsl(40.56 23.312757201646093% 4.8947542022763955%)",
     "variable": "var(--colors-accent-100)"
   },
   "colors.accent.200": {
-    "value": "hsl(60deg 32% 15%)",
+    "value": "hsl(36.95999999999998 25.502057613168727% 13.229866730289055%)",
     "variable": "var(--colors-accent-200)"
   },
   "colors.accent.300": {
-    "value": "hsl(56deg 32% 20%)",
+    "value": "hsl(33.360000000000014 31.444444444444446% 25.999999999999996%)",
     "variable": "var(--colors-accent-300)"
   },
   "colors.accent.400": {
-    "value": "hsl(52deg 33% 28%)",
+    "value": "hsl(29.75999999999999 43.016460905349795% 41.66488747198734%)",
     "variable": "var(--colors-accent-400)"
   },
   "colors.accent.500": {
-    "value": "hsl(48deg 35% 36%)",
+    "value": "hsl(26.160000000000025 59.98353909465022% 58.33511252801266%)",
     "variable": "var(--colors-accent-500)"
   },
   "colors.accent.600": {
-    "value": "hsl(44deg 37% 46%)",
+    "value": "hsl(22.560000000000002 71.55555555555556% 73.99999999999999%)",
     "variable": "var(--colors-accent-600)"
   },
   "colors.accent.700": {
-    "value": "hsl(40deg 40% 57%)",
+    "value": "hsl(18.95999999999998 77.49794238683128% 86.77013326971094%)",
     "variable": "var(--colors-accent-700)"
   },
   "colors.accent.800": {
-    "value": "hsl(36deg 43% 69%)",
+    "value": "hsl(15.360000000000014 79.6872427983539% 95.1052457977236%)",
     "variable": "var(--colors-accent-800)"
   },
   "colors.accent.900": {
-    "value": "hsl(32deg 46% 82%)",
+    "value": "hsl(11.759999999999991 80% 98%)",
     "variable": "var(--colors-accent-900)"
   },
   "breakpoints.sm": {
@@ -1772,23 +1832,27 @@ const tokens = {
     "variable": "var(--fonts-heading)"
   },
   "fonts.body": {
-    "value": "var(--fonts-inter)",
+    "value": "var(--fonts-hedvig)",
     "variable": "var(--fonts-body)"
+  },
+  "fonts.ui": {
+    "value": "var(--fonts-inter)",
+    "variable": "var(--fonts-ui)"
   },
   "fontSizes.header": {
     "value": "clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem)",
     "variable": "var(--font-sizes-header)"
   },
   "fontSizes.heading1": {
-    "value": "2.027rem",
+    "value": "2.986rem",
     "variable": "var(--font-sizes-heading1)"
   },
   "fontSizes.heading1.min": {
-    "value": "2.027rem",
+    "value": "2.986rem",
     "variable": "var(--font-sizes-heading1-min)"
   },
   "fontSizes.heading1.max": {
-    "value": "2.986rem",
+    "value": "3.986rem",
     "variable": "var(--font-sizes-heading1-max)"
   },
   "fontSizes.heading2": {
@@ -1800,7 +1864,7 @@ const tokens = {
     "variable": "var(--font-sizes-heading2-min)"
   },
   "fontSizes.heading2.max": {
-    "value": "2.488rem",
+    "value": "3.052rem",
     "variable": "var(--font-sizes-heading2-max)"
   },
   "fontSizes.heading3": {
@@ -1812,7 +1876,7 @@ const tokens = {
     "variable": "var(--font-sizes-heading3-min)"
   },
   "fontSizes.heading3.max": {
-    "value": "2.074rem",
+    "value": "2.441rem",
     "variable": "var(--font-sizes-heading3-max)"
   },
   "fontSizes.heading4": {
@@ -1824,7 +1888,7 @@ const tokens = {
     "variable": "var(--font-sizes-heading4-min)"
   },
   "fontSizes.heading4.max": {
-    "value": "1.728rem",
+    "value": "1.953rem",
     "variable": "var(--font-sizes-heading4-max)"
   },
   "fontSizes.heading5": {
@@ -1836,7 +1900,7 @@ const tokens = {
     "variable": "var(--font-sizes-heading5-min)"
   },
   "fontSizes.heading5.max": {
-    "value": "1.44rem",
+    "value": "1.563rem",
     "variable": "var(--font-sizes-heading5-max)"
   },
   "fontSizes.heading6": {
@@ -1848,7 +1912,7 @@ const tokens = {
     "variable": "var(--font-sizes-heading6-min)"
   },
   "fontSizes.heading6.max": {
-    "value": "1.2rem",
+    "value": "1.25rem",
     "variable": "var(--font-sizes-heading6-max)"
   },
   "fontSizes.body": {
@@ -1895,6 +1959,14 @@ const tokens = {
     "value": "calc(130px - clamp(0px, 6vw, 70px))",
     "variable": "var(--line-heights-heading-fluid)"
   },
+  "colors.offwhite": {
+    "value": "var(--colors-offwhite-800)",
+    "variable": "var(--colors-offwhite)"
+  },
+  "colors.offblack": {
+    "value": "var(--colors-offblack-600)",
+    "variable": "var(--colors-offblack)"
+  },
   "colors.fg": {
     "value": "var(--colors-fg)",
     "variable": "var(--colors-fg)"
@@ -1903,10 +1975,6 @@ const tokens = {
     "value": "var(--colors-fg-muted)",
     "variable": "var(--colors-fg-muted)"
   },
-  "colors.fg.subtle": {
-    "value": "var(--colors-fg-subtle)",
-    "variable": "var(--colors-fg-subtle)"
-  },
   "colors.bg": {
     "value": "var(--colors-bg)",
     "variable": "var(--colors-bg)"
@@ -1914,10 +1982,6 @@ const tokens = {
   "colors.bg.muted": {
     "value": "var(--colors-bg-muted)",
     "variable": "var(--colors-bg-muted)"
-  },
-  "colors.bg.subtle": {
-    "value": "var(--colors-bg-subtle)",
-    "variable": "var(--colors-bg-subtle)"
   },
   "colors.link": {
     "value": "var(--colors-link)",
@@ -2126,10 +2190,6 @@ const tokens = {
   "colors.colorPalette.muted": {
     "value": "var(--colors-color-palette-muted)",
     "variable": "var(--colors-color-palette-muted)"
-  },
-  "colors.colorPalette.subtle": {
-    "value": "var(--colors-color-palette-subtle)",
-    "variable": "var(--colors-color-palette-subtle)"
   }
 }
 

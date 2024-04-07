@@ -254,7 +254,7 @@ accentColor?: ConditionalValue<WithEscapeHatch<UtilityValues["accentColor"] | Cs
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-content
    */
-alignContent?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["alignContent"]>>
+alignContent?: ConditionalValue<WithEscapeHatch<OnlyKnown<"alignContent", CssVars | CssProperties["alignContent"]>>>
  /**
    * The CSS **`align-items`** property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
    *
@@ -269,7 +269,7 @@ alignContent?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["alignCo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-items
    */
-alignItems?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["alignItems"]>>
+alignItems?: ConditionalValue<WithEscapeHatch<OnlyKnown<"alignItems", CssVars | CssProperties["alignItems"]>>>
  /**
    * The **`align-self`** CSS property overrides a grid or flex item's `align-items` value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
    *
@@ -284,7 +284,7 @@ alignItems?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["alignItem
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/align-self
    */
-alignSelf?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["alignSelf"]>>
+alignSelf?: ConditionalValue<WithEscapeHatch<OnlyKnown<"alignSelf", CssVars | CssProperties["alignSelf"]>>>
  /**
    * The **`align-tracks`** CSS property sets the alignment in the masonry axis for grid containers that have masonry in their block axis.
    *
@@ -312,7 +312,7 @@ alignTracks?: ConditionalValue<WithEscapeHatch<CssProperties["alignTracks"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/all
    */
-all?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["all"]>>
+all?: ConditionalValue<WithEscapeHatch<OnlyKnown<"all", CssVars | CssProperties["all"]>>>
  /**
    * The **`animation`** shorthand CSS property applies an animation between styles. It is a shorthand for `animation-name`, `animation-duration`, `animation-timing-function`, `animation-delay`, `animation-iteration-count`, `animation-direction`, `animation-fill-mode`, and `animation-play-state`.
    *
@@ -339,7 +339,7 @@ animation?: ConditionalValue<WithEscapeHatch<UtilityValues["animation"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-composition
    */
-animationComposition?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["animationComposition"]>>
+animationComposition?: ConditionalValue<WithEscapeHatch<OnlyKnown<"animationComposition", CssVars | CssProperties["animationComposition"]>>>
  /**
    * The **`animation-delay`** CSS property specifies the amount of time to wait from applying the animation to an element before beginning to perform the animation. The animation can start later, immediately from its beginning, or immediately and partway through the animation.
    *
@@ -369,7 +369,7 @@ animationDelay?: ConditionalValue<WithEscapeHatch<UtilityValues["animationDelay"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-direction
    */
-animationDirection?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["animationDirection"]>>
+animationDirection?: ConditionalValue<WithEscapeHatch<OnlyKnown<"animationDirection", CssVars | CssProperties["animationDirection"]>>>
  /**
    * The **`animation-duration`** CSS property sets the length of time that an animation takes to complete one cycle.
    *
@@ -399,7 +399,7 @@ animationDuration?: ConditionalValue<WithEscapeHatch<UtilityValues["animationDur
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
    */
-animationFillMode?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["animationFillMode"]>>
+animationFillMode?: ConditionalValue<WithEscapeHatch<OnlyKnown<"animationFillMode", CssVars | CssProperties["animationFillMode"]>>>
  /**
    * The **`animation-iteration-count`** CSS property sets the number of times an animation sequence should be played before stopping.
    *
@@ -528,7 +528,7 @@ animationTimeline?: ConditionalValue<WithEscapeHatch<CssProperties["animationTim
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/appearance
    */
-appearance?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["appearance"]>>
+appearance?: ConditionalValue<WithEscapeHatch<OnlyKnown<"appearance", CssVars | CssProperties["appearance"]>>>
  /**
    * The **`aspect-ratio`** CSS property sets a **preferred aspect ratio** for the box, which will be used in the calculation of auto sizes and some other layout functions.
    *
@@ -572,7 +572,7 @@ backdropFilter?: ConditionalValue<WithEscapeHatch<UtilityValues["backdropFilter"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/backface-visibility
    */
-backfaceVisibility?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["backfaceVisibility"]>>
+backfaceVisibility?: ConditionalValue<WithEscapeHatch<OnlyKnown<"backfaceVisibility", CssVars | CssProperties["backfaceVisibility"]>>>
  /**
    * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
    *
@@ -598,7 +598,7 @@ background?: ConditionalValue<WithEscapeHatch<UtilityValues["background"] | CssV
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
    */
-backgroundAttachment?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["backgroundAttachment"]>>
+backgroundAttachment?: ConditionalValue<WithEscapeHatch<OnlyKnown<"backgroundAttachment", CssVars | CssProperties["backgroundAttachment"]>>>
  /**
    * The **`background-blend-mode`** CSS property sets how an element's background images should blend with each other and with the element's background color.
    *
@@ -627,7 +627,7 @@ backgroundBlendMode?: ConditionalValue<WithEscapeHatch<CssProperties["background
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
-backgroundClip?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["backgroundClip"]>>
+backgroundClip?: ConditionalValue<WithEscapeHatch<OnlyKnown<"backgroundClip", CssVars | CssProperties["backgroundClip"]>>>
  /**
    * The **`background-color`** CSS property sets the background color of an element.
    *
@@ -806,7 +806,7 @@ borderBlockColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBlockCo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-style
    */
-borderBlockStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderBlockStyle"]>>
+borderBlockStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderBlockStyle", CssVars | CssProperties["borderBlockStyle"]>>>
  /**
    * The **`border-block-width`** CSS property defines the width of the logical block borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -860,7 +860,7 @@ borderBlockEndColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBloc
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-end-style
    */
-borderBlockEndStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderBlockEndStyle"]>>
+borderBlockEndStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderBlockEndStyle", CssVars | CssProperties["borderBlockEndStyle"]>>>
  /**
    * The **`border-block-end-width`** CSS property defines the width of the logical block-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -914,7 +914,7 @@ borderBlockStartColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderBl
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-block-start-style
    */
-borderBlockStartStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderBlockStartStyle"]>>
+borderBlockStartStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderBlockStartStyle", CssVars | CssProperties["borderBlockStartStyle"]>>>
  /**
    * The **`border-block-start-width`** CSS property defines the width of the logical block-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -998,7 +998,7 @@ borderBottomRightRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["border
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-bottom-style
    */
-borderBottomStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderBottomStyle"]>>
+borderBottomStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderBottomStyle", CssVars | CssProperties["borderBottomStyle"]>>>
  /**
    * The **`border-bottom-width`** CSS property sets the width of the bottom border of an element.
    *
@@ -1026,7 +1026,7 @@ borderBottomWidth?: ConditionalValue<WithEscapeHatch<CssProperties["borderBottom
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-collapse
    */
-borderCollapse?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderCollapse"]>>
+borderCollapse?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderCollapse", CssVars | CssProperties["borderCollapse"]>>>
  /**
    * The **`border-color`** shorthand CSS property sets the color of an element's border.
    *
@@ -1201,7 +1201,7 @@ borderInlineColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInline
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-style
    */
-borderInlineStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderInlineStyle"]>>
+borderInlineStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderInlineStyle", CssVars | CssProperties["borderInlineStyle"]>>>
  /**
    * The **`border-inline-width`** CSS property defines the width of the logical inline borders of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width` and `border-bottom-width`, or `border-left-width`, and `border-right-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1245,7 +1245,7 @@ borderInlineEndColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderInl
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-end-style
    */
-borderInlineEndStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderInlineEndStyle"]>>
+borderInlineEndStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderInlineEndStyle", CssVars | CssProperties["borderInlineEndStyle"]>>>
  /**
    * The **`border-inline-end-width`** CSS property defines the width of the logical inline-end border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1302,7 +1302,7 @@ borderInlineStartColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderI
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-inline-start-style
    */
-borderInlineStartStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderInlineStartStyle"]>>
+borderInlineStartStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderInlineStartStyle", CssVars | CssProperties["borderInlineStartStyle"]>>>
  /**
    * The **`border-inline-start-width`** CSS property defines the width of the logical inline-start border of an element, which maps to a physical border width depending on the element's writing mode, directionality, and text orientation. It corresponds to the `border-top-width`, `border-right-width`, `border-bottom-width`, or `border-left-width` property depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -1356,7 +1356,7 @@ borderLeftColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderLeftColo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-left-style
    */
-borderLeftStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderLeftStyle"]>>
+borderLeftStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderLeftStyle", CssVars | CssProperties["borderLeftStyle"]>>>
  /**
    * The **`border-left-width`** CSS property sets the width of the left border of an element.
    *
@@ -1423,7 +1423,7 @@ borderRightColor?: ConditionalValue<WithEscapeHatch<UtilityValues["borderRightCo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-right-style
    */
-borderRightStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderRightStyle"]>>
+borderRightStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderRightStyle", CssVars | CssProperties["borderRightStyle"]>>>
  /**
    * The **`border-right-width`** CSS property sets the width of the right border of an element.
    *
@@ -1561,7 +1561,7 @@ borderTopRightRadius?: ConditionalValue<WithEscapeHatch<UtilityValues["borderTop
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/border-top-style
    */
-borderTopStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["borderTopStyle"]>>
+borderTopStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"borderTopStyle", CssVars | CssProperties["borderTopStyle"]>>>
  /**
    * The **`border-top-width`** CSS property sets the width of the top border of an element.
    *
@@ -1616,7 +1616,7 @@ bottom?: ConditionalValue<WithEscapeHatch<UtilityValues["bottom"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
    */
-boxDecorationBreak?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["boxDecorationBreak"]>>
+boxDecorationBreak?: ConditionalValue<WithEscapeHatch<OnlyKnown<"boxDecorationBreak", CssVars | CssProperties["boxDecorationBreak"]>>>
  boxDirection?: ConditionalValue<WithEscapeHatch<CssProperties["boxDirection"]>>
  boxFlex?: ConditionalValue<WithEscapeHatch<CssProperties["boxFlex"]>>
  boxFlexGroup?: ConditionalValue<WithEscapeHatch<CssProperties["boxFlexGroup"]>>
@@ -1653,7 +1653,7 @@ boxShadow?: ConditionalValue<WithEscapeHatch<UtilityValues["boxShadow"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/box-sizing
    */
-boxSizing?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["boxSizing"]>>
+boxSizing?: ConditionalValue<WithEscapeHatch<OnlyKnown<"boxSizing", CssVars | CssProperties["boxSizing"]>>>
  /**
    * The **`break-after`** CSS property sets how page, column, or region breaks should behave after a generated box. If there is no generated box, the property is ignored.
    *
@@ -1667,7 +1667,7 @@ boxSizing?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["boxSizing"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-after
    */
-breakAfter?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakAfter"]>>
+breakAfter?: ConditionalValue<WithEscapeHatch<OnlyKnown<"breakAfter", CssVars | CssProperties["breakAfter"]>>>
  /**
    * The **`break-before`** CSS property sets how page, column, or region breaks should behave before a generated box. If there is no generated box, the property is ignored.
    *
@@ -1681,7 +1681,7 @@ breakAfter?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakAfte
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-before
    */
-breakBefore?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakBefore"]>>
+breakBefore?: ConditionalValue<WithEscapeHatch<OnlyKnown<"breakBefore", CssVars | CssProperties["breakBefore"]>>>
  /**
    * The **`break-inside`** CSS property sets how page, column, or region breaks should behave inside a generated box. If there is no generated box, the property is ignored.
    *
@@ -1695,7 +1695,7 @@ breakBefore?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakBef
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/break-inside
    */
-breakInside?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakInside"]>>
+breakInside?: ConditionalValue<WithEscapeHatch<OnlyKnown<"breakInside", CssVars | CssProperties["breakInside"]>>>
  /**
    * The **`caption-side`** CSS property puts the content of a table's `<caption>` on the specified side. The values are relative to the `writing-mode` of the table.
    *
@@ -1709,7 +1709,7 @@ breakInside?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["breakIns
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/caption-side
    */
-captionSide?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["captionSide"]>>
+captionSide?: ConditionalValue<WithEscapeHatch<OnlyKnown<"captionSide", CssVars | CssProperties["captionSide"]>>>
  /** **Syntax**: `<'caret-color'> || <'caret-shape'>` */
 caret?: ConditionalValue<WithEscapeHatch<CssProperties["caret"]>>
  /**
@@ -1745,7 +1745,7 @@ caretShape?: ConditionalValue<WithEscapeHatch<CssProperties["caretShape"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/clear
    */
-clear?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["clear"]>>
+clear?: ConditionalValue<WithEscapeHatch<OnlyKnown<"clear", CssVars | CssProperties["clear"]>>>
  clip?: ConditionalValue<WithEscapeHatch<CssProperties["clip"]>>
  /**
    * The **`clip-path`** CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.
@@ -1819,7 +1819,7 @@ columnCount?: ConditionalValue<WithEscapeHatch<CssProperties["columnCount"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-fill
    */
-columnFill?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["columnFill"]>>
+columnFill?: ConditionalValue<WithEscapeHatch<OnlyKnown<"columnFill", CssVars | CssProperties["columnFill"]>>>
  /**
    * The **`column-gap`** CSS property sets the size of the gap (gutter) between an element's columns.
    *
@@ -1876,7 +1876,7 @@ columnRuleColor?: ConditionalValue<WithEscapeHatch<CssProperties["columnRuleColo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/column-rule-style
    */
-columnRuleStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["columnRuleStyle"]>>
+columnRuleStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"columnRuleStyle", CssVars | CssProperties["columnRuleStyle"]>>>
  /**
    * The **`column-rule-width`** CSS property sets the width of the line drawn between columns in a multi-column layout.
    *
@@ -2084,7 +2084,7 @@ content?: ConditionalValue<WithEscapeHatch<CssProperties["content"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/content-visibility
    */
-contentVisibility?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["contentVisibility"]>>
+contentVisibility?: ConditionalValue<WithEscapeHatch<OnlyKnown<"contentVisibility", CssVars | CssProperties["contentVisibility"]>>>
  /**
    * The **`counter-increment`** CSS property increases or decreases the value of a CSS counter by a given value.
    *
@@ -2154,7 +2154,7 @@ cursor?: ConditionalValue<WithEscapeHatch<CssProperties["cursor"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/direction
    */
-direction?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["direction"]>>
+direction?: ConditionalValue<WithEscapeHatch<OnlyKnown<"direction", CssVars | CssProperties["direction"]>>>
  /**
    * The **`display`** CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
    *
@@ -2168,7 +2168,7 @@ direction?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["direction"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/display
    */
-display?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["display"]>>
+display?: ConditionalValue<WithEscapeHatch<OnlyKnown<"display", CssVars | CssProperties["display"]>>>
  /**
    * The **`empty-cells`** CSS property sets whether borders and backgrounds appear around `<table>` cells that have no visible content.
    *
@@ -2182,7 +2182,7 @@ display?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["display"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/empty-cells
    */
-emptyCells?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["emptyCells"]>>
+emptyCells?: ConditionalValue<WithEscapeHatch<OnlyKnown<"emptyCells", CssVars | CssProperties["emptyCells"]>>>
  /**
    * The **`filter`** CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
    *
@@ -2240,7 +2240,7 @@ flexBasis?: ConditionalValue<WithEscapeHatch<UtilityValues["flexBasis"] | CssVar
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
-flexDirection?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["flexDirection"]>>
+flexDirection?: ConditionalValue<WithEscapeHatch<OnlyKnown<"flexDirection", CssVars | CssProperties["flexDirection"]>>>
  /**
    * The **`flex-flow`** CSS shorthand property specifies the direction of a flex container, as well as its wrapping behavior.
    *
@@ -2298,7 +2298,7 @@ flexShrink?: ConditionalValue<WithEscapeHatch<CssProperties["flexShrink"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-wrap
    */
-flexWrap?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["flexWrap"]>>
+flexWrap?: ConditionalValue<WithEscapeHatch<OnlyKnown<"flexWrap", CssVars | CssProperties["flexWrap"]>>>
  /**
    * The **`float`** CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).
    *
@@ -2312,7 +2312,7 @@ flexWrap?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["flexWrap"]>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/float
    */
-float?: ConditionalValue<WithEscapeHatch<UtilityValues["float"] | CssVars>>
+float?: ConditionalValue<WithEscapeHatch<OnlyKnown<"float", UtilityValues["float"] | CssVars>>>
  /**
    * The **`font`** CSS shorthand property sets all the different properties of an element's font. Alternatively, it sets an element's font to a system font.
    *
@@ -2368,7 +2368,7 @@ fontFeatureSettings?: ConditionalValue<WithEscapeHatch<CssProperties["fontFeatur
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/font-kerning
    */
-fontKerning?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["fontKerning"]>>
+fontKerning?: ConditionalValue<WithEscapeHatch<OnlyKnown<"fontKerning", CssVars | CssProperties["fontKerning"]>>>
  /**
    * The **`font-language-override`** CSS property controls the use of language-specific glyphs in a typeface.
    *
@@ -2703,7 +2703,7 @@ fontWeight?: ConditionalValue<WithEscapeHatch<UtilityValues["fontWeight"] | CssV
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/forced-color-adjust
    */
-forcedColorAdjust?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["forcedColorAdjust"]>>
+forcedColorAdjust?: ConditionalValue<WithEscapeHatch<OnlyKnown<"forcedColorAdjust", CssVars | CssProperties["forcedColorAdjust"]>>>
  /**
    * The **`gap`** CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for `row-gap` and `column-gap`.
    *
@@ -3164,7 +3164,7 @@ insetInlineStart?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineSt
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/isolation
    */
-isolation?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["isolation"]>>
+isolation?: ConditionalValue<WithEscapeHatch<OnlyKnown<"isolation", CssVars | CssProperties["isolation"]>>>
  /**
    * The CSS **`justify-content`** property defines how the browser distributes space between and around content items along the main-axis of a flex container, and the inline axis of a grid container.
    *
@@ -3264,7 +3264,7 @@ letterSpacing?: ConditionalValue<WithEscapeHatch<UtilityValues["letterSpacing"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/line-break
    */
-lineBreak?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["lineBreak"]>>
+lineBreak?: ConditionalValue<WithEscapeHatch<OnlyKnown<"lineBreak", CssVars | CssProperties["lineBreak"]>>>
  /**
    * **Syntax**: `none | <integer>`
    *
@@ -3946,7 +3946,7 @@ minWidth?: ConditionalValue<WithEscapeHatch<UtilityValues["minWidth"] | CssVars>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/mix-blend-mode
    */
-mixBlendMode?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["mixBlendMode"]>>
+mixBlendMode?: ConditionalValue<WithEscapeHatch<OnlyKnown<"mixBlendMode", CssVars | CssProperties["mixBlendMode"]>>>
  /**
    * The **`object-fit`** CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
    *
@@ -3960,7 +3960,7 @@ mixBlendMode?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["mixBlen
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/object-fit
    */
-objectFit?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["objectFit"]>>
+objectFit?: ConditionalValue<WithEscapeHatch<OnlyKnown<"objectFit", CssVars | CssProperties["objectFit"]>>>
  /**
    * The **`object-position`** CSS property specifies the alignment of the selected replaced element's contents within the element's box. Areas of the box which aren't covered by the replaced element's object will show the element's background.
    *
@@ -4153,7 +4153,7 @@ outlineOffset?: ConditionalValue<WithEscapeHatch<UtilityValues["outlineOffset"] 
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/outline-style
    */
-outlineStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["outlineStyle"]>>
+outlineStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"outlineStyle", CssVars | CssProperties["outlineStyle"]>>>
  /**
    * The CSS **`outline-width`** property sets the thickness of an element's outline. An outline is a line that is drawn around an element, outside the `border`.
    *
@@ -4181,7 +4181,7 @@ outlineWidth?: ConditionalValue<WithEscapeHatch<CssProperties["outlineWidth"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow
    */
-overflow?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflow"]>>
+overflow?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflow", CssVars | CssProperties["overflow"]>>>
  /**
    * **Syntax**: `auto | none`
    *
@@ -4205,7 +4205,7 @@ overflowAnchor?: ConditionalValue<WithEscapeHatch<CssProperties["overflowAnchor"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-block
    */
-overflowBlock?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowBlock"]>>
+overflowBlock?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflowBlock", CssVars | CssProperties["overflowBlock"]>>>
  /**
    * The **`overflow-clip-box`** CSS property specifies relative to which box the clipping happens when there is an overflow. It is short hand for the `overflow-clip-box-inline` and `overflow-clip-box-block` properties.
    *
@@ -4237,7 +4237,7 @@ overflowClipMargin?: ConditionalValue<WithEscapeHatch<CssProperties["overflowCli
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-inline
    */
-overflowInline?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowInline"]>>
+overflowInline?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflowInline", CssVars | CssProperties["overflowInline"]>>>
  /**
    * The **`overflow-wrap`** CSS property applies to inline elements, setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.
    *
@@ -4252,7 +4252,7 @@ overflowInline?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overf
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
    */
-overflowWrap?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowWrap"]>>
+overflowWrap?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflowWrap", CssVars | CssProperties["overflowWrap"]>>>
  /**
    * The **`overflow-x`** CSS property sets what shows when content overflows a block-level element's left and right edges. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -4266,7 +4266,7 @@ overflowWrap?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflo
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-x
    */
-overflowX?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowX"]>>
+overflowX?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflowX", CssVars | CssProperties["overflowX"]>>>
  /**
    * The **`overflow-y`** CSS property sets what shows when content overflows a block-level element's top and bottom edges. This may be nothing, a scroll bar, or the overflow content.
    *
@@ -4280,7 +4280,7 @@ overflowX?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowX"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/overflow-y
    */
-overflowY?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["overflowY"]>>
+overflowY?: ConditionalValue<WithEscapeHatch<OnlyKnown<"overflowY", CssVars | CssProperties["overflowY"]>>>
  /**
    * The **`overlay`** CSS property specifies whether an element appearing in the top layer (for example, a shown popover or modal `<dialog>` element) is actually rendered in the top layer. This property is only relevant within a list of `transition-property` values, and only if `allow-discrete` is set as the `transition-behavior`.
    *
@@ -4664,7 +4664,7 @@ placeSelf?: ConditionalValue<WithEscapeHatch<CssProperties["placeSelf"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/pointer-events
    */
-pointerEvents?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["pointerEvents"]>>
+pointerEvents?: ConditionalValue<WithEscapeHatch<OnlyKnown<"pointerEvents", CssVars | CssProperties["pointerEvents"]>>>
  /**
    * The **`position`** CSS property sets how an element is positioned in a document. The `top`, `right`, `bottom`, and `left` properties determine the final location of positioned elements.
    *
@@ -4678,7 +4678,7 @@ pointerEvents?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["pointe
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/position
    */
-position?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["position"]>>
+position?: ConditionalValue<WithEscapeHatch<OnlyKnown<"position", CssVars | CssProperties["position"]>>>
  /**
    * The **`print-color-adjust`** CSS property sets what, if anything, the user agent may do to optimize the appearance of the element on the output device. By default, the browser is allowed to make any adjustments to the element's appearance it determines to be necessary and prudent given the type and capabilities of the output device.
    *
@@ -4721,7 +4721,7 @@ quotes?: ConditionalValue<WithEscapeHatch<CssProperties["quotes"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/resize
    */
-resize?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["resize"]>>
+resize?: ConditionalValue<WithEscapeHatch<OnlyKnown<"resize", CssVars | CssProperties["resize"]>>>
  /**
    * The **`right`** CSS property participates in specifying the horizontal position of a positioned element. It has no effect on non-positioned elements.
    *
@@ -4868,7 +4868,7 @@ scrollbarWidth?: ConditionalValue<WithEscapeHatch<CssProperties["scrollbarWidth"
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/scroll-behavior
    */
-scrollBehavior?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["scrollBehavior"]>>
+scrollBehavior?: ConditionalValue<WithEscapeHatch<OnlyKnown<"scrollBehavior", CssVars | CssProperties["scrollBehavior"]>>>
  /**
    * The **`scroll-margin`** shorthand property sets all of the scroll margins of an element at once, assigning values much like the `margin` property does for margins of an element.
    *
@@ -5729,7 +5729,7 @@ top?: ConditionalValue<WithEscapeHatch<UtilityValues["top"] | CssVars>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/touch-action
    */
-touchAction?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["touchAction"]>>
+touchAction?: ConditionalValue<WithEscapeHatch<OnlyKnown<"touchAction", CssVars | CssProperties["touchAction"]>>>
  /**
    * The **`transform`** CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
    *
@@ -5758,7 +5758,7 @@ transform?: ConditionalValue<WithEscapeHatch<CssProperties["transform"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transform-box
    */
-transformBox?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["transformBox"]>>
+transformBox?: ConditionalValue<WithEscapeHatch<OnlyKnown<"transformBox", CssVars | CssProperties["transformBox"]>>>
  /**
    * The **`transform-origin`** CSS property sets the origin for an element's transformations.
    *
@@ -5788,7 +5788,7 @@ transformOrigin?: ConditionalValue<WithEscapeHatch<CssProperties["transformOrigi
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/transform-style
    */
-transformStyle?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["transformStyle"]>>
+transformStyle?: ConditionalValue<WithEscapeHatch<OnlyKnown<"transformStyle", CssVars | CssProperties["transformStyle"]>>>
  /**
    * The **`transition`** CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
    *
@@ -5918,7 +5918,7 @@ unicodeBidi?: ConditionalValue<WithEscapeHatch<CssProperties["unicodeBidi"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/user-select
    */
-userSelect?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["userSelect"]>>
+userSelect?: ConditionalValue<WithEscapeHatch<OnlyKnown<"userSelect", CssVars | CssProperties["userSelect"]>>>
  /**
    * The **`vertical-align`** CSS property sets vertical alignment of an inline, inline-block or table-cell box.
    *
@@ -6014,7 +6014,7 @@ viewTransitionName?: ConditionalValue<WithEscapeHatch<CssProperties["viewTransit
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/visibility
    */
-visibility?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["visibility"]>>
+visibility?: ConditionalValue<WithEscapeHatch<OnlyKnown<"visibility", CssVars | CssProperties["visibility"]>>>
  /**
    * The **`white-space`** CSS property sets how white space inside an element is handled.
    *
@@ -6098,7 +6098,7 @@ willChange?: ConditionalValue<WithEscapeHatch<CssProperties["willChange"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/word-break
    */
-wordBreak?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["wordBreak"]>>
+wordBreak?: ConditionalValue<WithEscapeHatch<OnlyKnown<"wordBreak", CssVars | CssProperties["wordBreak"]>>>
  /**
    * The **`word-spacing`** CSS property sets the length of space between words and between tags.
    *
@@ -6139,7 +6139,7 @@ wordWrap?: ConditionalValue<WithEscapeHatch<CssProperties["wordWrap"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/writing-mode
    */
-writingMode?: ConditionalValue<WithEscapeHatch<CssVars | CssProperties["writingMode"]>>
+writingMode?: ConditionalValue<WithEscapeHatch<OnlyKnown<"writingMode", CssVars | CssProperties["writingMode"]>>>
  /**
    * The **`z-index`** CSS property sets the z-order of a positioned element and its descendants or flex items. Overlapping elements with a larger z-index cover those with a smaller one.
    *
@@ -6211,7 +6211,7 @@ zoom?: ConditionalValue<WithEscapeHatch<CssProperties["zoom"]>>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/position
    */
-pos?: ConditionalValue<WithEscapeHatch<CssProperties["position"]>>
+pos?: ConditionalValue<WithEscapeHatch<OnlyKnown<"position", CssProperties["position"]>>>
  /**
    * The **`inset-inline`** CSS property defines the logical start and end offsets of an element in the inline direction, which maps to physical offsets depending on the element's writing mode, directionality, and text orientation. It corresponds to the `top` and `bottom`, or `right` and `left` properties depending on the values defined for `writing-mode`, `direction`, and `text-orientation`.
    *
@@ -6306,7 +6306,7 @@ start?: ConditionalValue<WithEscapeHatch<UtilityValues["insetInlineStart"] | Css
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/flex-direction
    */
-flexDir?: ConditionalValue<WithEscapeHatch<CssProperties["flexDirection"]>>
+flexDir?: ConditionalValue<WithEscapeHatch<OnlyKnown<"flexDirection", CssProperties["flexDirection"]>>>
  /**
    * The **`padding`** CSS shorthand property sets the padding area on all four sides of an element at once.
    *
@@ -6853,7 +6853,7 @@ bgPositionY?: ConditionalValue<WithEscapeHatch<CssProperties["backgroundPosition
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-attachment
    */
-bgAttachment?: ConditionalValue<WithEscapeHatch<CssProperties["backgroundAttachment"]>>
+bgAttachment?: ConditionalValue<WithEscapeHatch<OnlyKnown<"backgroundAttachment", CssProperties["backgroundAttachment"]>>>
  /**
    * The **`background-clip`** CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
    *
@@ -6868,7 +6868,7 @@ bgAttachment?: ConditionalValue<WithEscapeHatch<CssProperties["backgroundAttachm
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/background-clip
    */
-bgClip?: ConditionalValue<WithEscapeHatch<CssProperties["backgroundClip"]>>
+bgClip?: ConditionalValue<WithEscapeHatch<OnlyKnown<"backgroundClip", CssProperties["backgroundClip"]>>>
  /**
    * The **`background`** shorthand CSS property sets all background style properties at once, such as color, image, origin and size, or repeat method.
    *
