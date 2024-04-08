@@ -22,13 +22,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       const className = childProps.props["className"];
       const language = className?.replace("language-", "") ?? "";
 
-      console.log({
-        content,
-        className,
-        language,
-        allLanguages,
-      });
-
       if (language && allLanguages[language]) {
         const tree = refractor.highlight(content, language);
         const html = toHtml(tree as any);
