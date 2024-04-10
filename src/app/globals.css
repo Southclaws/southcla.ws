@@ -98,6 +98,13 @@
 
   p {
     margin-bottom: var(--spacing-2);
+    font-size: var(--font-sizes-body);
+    font-size: clamp(
+      var(--font-sizes-body-min),
+      4vw,
+      var(--font-sizes-body-max)
+    );
+    font-weight: var(--font-weights-medium);
   }
 
   .typography {
@@ -160,7 +167,8 @@
   }
 
   aside p {
-    color: var(--colors-accent-700);
+    color: var(--colors-accent);
+    font-weight: var(--font-weights-semibold);
   }
 
   time {
