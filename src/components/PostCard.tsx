@@ -19,7 +19,9 @@ export function PostCard({ post }: Props) {
         {formatDistanceToNow(post.metadata.timestamp, { addSuffix: true })}
       </time>
 
-      <styled.p m="0">{post.metadata.subtitle}</styled.p>
+      <styled.p m="0" lineClamp={1}>
+        {post.metadata.subtitle}
+      </styled.p>
     </styled.article>
   );
 }
