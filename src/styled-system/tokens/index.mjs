@@ -1844,11 +1844,11 @@ const tokens = {
     "variable": "var(--font-sizes-header)"
   },
   "fontSizes.heading1": {
-    "value": "2.986rem",
+    "value": "2rem",
     "variable": "var(--font-sizes-heading1)"
   },
   "fontSizes.heading1.min": {
-    "value": "2.986rem",
+    "value": "2rem",
     "variable": "var(--font-sizes-heading1-min)"
   },
   "fontSizes.heading1.max": {

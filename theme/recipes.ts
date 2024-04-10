@@ -11,7 +11,7 @@ const link = defineRecipe({
     fontWeight: "semibold",
     width: "min",
     _hover: {
-      backgroundColor: "accent.600",
+      backgroundColor: "accent",
       textDecoration: "underline",
     },
   },
