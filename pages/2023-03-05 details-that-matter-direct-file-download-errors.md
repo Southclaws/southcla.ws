@@ -22,7 +22,7 @@ Now, Odin is a heavily product-driven company, and I am very proud to be part of
 
 ![2024-04-08-17-48-34](/images/2024-04-08-17-48-34.png)
 
-No bare courier new allowed, we’re doing full HTML errors.
+> No bare courier new allowed, we’re doing full HTML errors.
 
 This is what the backend service kicks back if it runs into an error during a direct file access request. Sure, it’s not using our designer’s beautiful design system or colours and there isn’t a squircle in sight, but it’s infinitely better than a tiny monospace cryptic phrase in the top left corner.
 
