@@ -31,10 +31,10 @@ export async function getContent(slug: string): Promise<Post> {
   const filenamePattern = `* ${slug}.md`;
   const filepathPattern = path.join(root, filenamePattern);
 
-  const results = await glob(filepathPattern);
+  const results = await glob(filepathPattern, { windowsPathsNoEscape: true });
 
   if (results.length !== 1) {
-    throw new Error(`Unable to find file with pattern ${filenamePattern}`);
+    throw new Error(`Unable to find file with pattern "${filepathPattern}"`);
   }
 
   const filepath = path.parse(results[0]);
