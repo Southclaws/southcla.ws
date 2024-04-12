@@ -7,7 +7,7 @@ type Props = {
   post: PostReference;
 };
 
-export function PostCard({ post }: Props) {
+export async function PostCard({ post }: Props) {
   return (
     <styled.article p="2" borderRadius="md" bgColor="bg.muted">
       <styled.h1 fontSize="lg">

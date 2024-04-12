@@ -1,10 +1,14 @@
+"use server";
+
+import { LinkCard } from "@/components/LinkCard/LinkCard";
 import { toHtml } from "hast-util-to-html";
 import type { MDXComponents } from "mdx/types";
-import { ReactElement } from "react";
+import ogs from "open-graph-scraper-lite";
+import React, { ReactElement } from "react";
 import { refractor } from "refractor";
 import css from "refractor/lang/css.js";
-import tsx from "refractor/lang/tsx";
 import go from "refractor/lang/go";
+import tsx from "refractor/lang/tsx";
 
 refractor.register(css);
 refractor.register(tsx);
@@ -14,7 +18,9 @@ const allLanguages = Object.fromEntries(
   refractor.listLanguages().map((v) => [v, true])
 );
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export async function useMDXComponents(
+  components: MDXComponents
+): Promise<MDXComponents> {
   return {
     pre: ({ children, ...props }) => {
       const childProps = children as ReactElement;
@@ -40,6 +46,31 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     },
     a: (props) => <a target="_blank" {...props} />,
     code: (props) => <code>{props.children}</code>,
+    p: async (props) => {
+      try {
+        if (React.Children.count(props.children) === 1) {
+          const s = React.Children.toArray(props.children)[0]?.toString();
+
+          const parsed = new URL(s);
+          const response = await fetch(parsed.href);
+
+          const link = await ogs({
+            html: await response.text(),
+          });
+
+          return (
+            <LinkCard
+              url={parsed.href}
+              title={link.result.ogTitle}
+              description={link.result.ogDescription}
+              image={link.result.ogImage?.[0].url}
+            />
+          );
+        }
+      } catch {}
+
+      return <p {...props} />;
+    },
     ...components,
   };
 }

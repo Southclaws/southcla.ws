@@ -50,7 +50,7 @@ export async function getContent(slug: string): Promise<Post> {
     options: {
       parseFrontmatter: true,
     },
-    components: useMDXComponents({}),
+    components: await useMDXComponents({}),
   });
 
   const postmeta = FrontmatterSchema.parse(frontmatter);

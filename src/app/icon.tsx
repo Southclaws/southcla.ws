@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import styles from "../../panda.config";
+import { orbiterBold } from "./fonts/og";
 
 const offblack =
   (styles.theme?.extend?.tokens?.colors?.offblack as any).DEFAULT?.value ??
@@ -18,10 +19,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Icon() {
-  const orbiterBold = fetch(
-    new URL("./TASAOrbiterDisplay-Bold.otf", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
   return new ImageResponse(
     (
       <div
@@ -44,7 +41,7 @@ export default async function Icon() {
       fonts: [
         {
           name: "TASA Orbiter",
-          data: await orbiterBold,
+          data: await orbiterBold(),
           style: "normal",
           weight: 800,
         },
