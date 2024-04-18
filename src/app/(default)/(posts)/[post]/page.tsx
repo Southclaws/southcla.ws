@@ -9,6 +9,18 @@ type Props = {
   };
 };
 
+export async function generateMetadata(props: Props) {
+  try {
+    const { metadata } = await getContent(props.params.post);
+    return {
+      title: `${metadata.title} | barney's tech blog`,
+      description: metadata.subtitle,
+    };
+  } catch (_) {
+    return undefined;
+  }
+}
+
 export default async function Page(props: Props) {
   if (props.params.post === "favicon.ico") {
     // TODO: Figure out why Next.js isn't providing this file before running
