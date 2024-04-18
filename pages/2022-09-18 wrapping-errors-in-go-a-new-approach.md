@@ -1,6 +1,7 @@
 ---
 title: Wrapping errors in Go
 subtitle: A new approach using function currying.
+hero: "/images/wrapping-errors.png"
 ---
 
 I've changed **all** error wrapping in two production codebases from this:

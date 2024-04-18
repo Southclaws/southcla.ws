@@ -1,6 +1,7 @@
 ---
 title: Fluid typography kerning in CSS
 subtitle: Taking fluid typography one step further by meticulously controlling kerning pairs.
+hero: /images/southclaws_purple_and_blue_mountain_scenery_behind_the_screen_i_31127cb3-ef1a-4226-8b16-15d10328e4f2.png
 ---
 
 ![2024-04-06-18-45-54](/images/2024-04-06-18-45-54.png)
