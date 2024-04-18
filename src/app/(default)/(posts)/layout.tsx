@@ -1,5 +1,4 @@
 import { styled } from "@/styled-system/jsx";
-import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,10 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       w="full"
       overflow="hidden"
     >
-      <Link className="link" href="/">
-        &larr;&nbsp;Back
-      </Link>
-
       {children}
 
       <hr />
