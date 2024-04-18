@@ -1,17 +1,10 @@
 import { Box, VStack, styled } from "@/styled-system/jsx";
 
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+
 import "../code-dark.css";
 import "../code-light.css";
-
-const HeaderGroup = styled("hgroup", {
-  base: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "start",
-    gap: "headerGroup",
-    mb: { base: "8", md: "4" },
-  },
-});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -35,30 +28,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         p="sm.fluid"
       >
         <VStack alignItems="start">
-          <header>
-            <HeaderGroup>
-              <styled.h1 fontSize="header" color="fg" lineHeight="headerGroup">
-                southclaws
-              </styled.h1>
-              <styled.p ml="0.5" mb="0" color="fg.muted">
-                <a href="https://www.linkedin.com/in/southclaws/">
-                  barnaby keene
-                </a>{" "}
-                • <a href="https://twitter.com/southclaws">@southclaws</a>
-              </styled.p>
-            </HeaderGroup>
-          </header>
-
+          <Header />
           <styled.main w="full">{children}</styled.main>
         </VStack>
 
-        <footer>
-          <styled.p fontSize="xs">
-            designed while sat in the barbican on saturday the twenty third of
-            september two thousand twenty three. email me at hey.com, my
-            username is barney.
-          </styled.p>
-        </footer>
+        <Footer />
       </Box>
     </Box>
   );

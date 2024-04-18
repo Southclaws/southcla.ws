@@ -1,6 +1,7 @@
 import { PostCardList } from "@/components/PostCardList";
 import { getPosts } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
+import { linkButton } from "@/styled-system/recipes";
 import Link from "next/link";
 import { Career } from "../../misc/Career";
 
@@ -22,14 +23,14 @@ export default async function Home() {
           gap="2"
         >
           <styled.li margin="0">
-            <Link className="link" href="https://blog.barney.is">
-              tech, culture and design newsletter
+            <Link className={linkButton()} href="https://barney.is">
+              home page
             </Link>
           </styled.li>
 
           <styled.li margin="0">
-            <Link className="link" href="https://barney.is">
-              home page
+            <Link className={linkButton()} href="https://blog.barney.is">
+              tech, culture and design newsletter
             </Link>
           </styled.li>
         </styled.ul>

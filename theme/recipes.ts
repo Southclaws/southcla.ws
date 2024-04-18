@@ -1,7 +1,7 @@
 import { defineRecipe } from "@pandacss/dev";
 
-const link = defineRecipe({
-  className: "link",
+const linkButton = defineRecipe({
+  className: "link-button",
   base: {
     color: "bg",
     backgroundColor: "link",
@@ -11,10 +11,26 @@ const link = defineRecipe({
     fontWeight: "semibold",
     width: "min",
     _hover: {
-      backgroundColor: "accent",
       textDecoration: "underline",
+    },
+  },
+  variants: {
+    variant: {
+      outline: {
+        backgroundColor: "transparent",
+        border: "1px solid",
+        borderColor: "link",
+        color: "link",
+        _hover: {
+          textDecoration: "none",
+          backgroundColor: "link",
+          color: "bg",
+        },
+      },
     },
   },
 });
 
-export default { link };
+export default {
+  linkButton,
+};

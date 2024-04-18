@@ -1,1 +1,1 @@
-export * from './link.mjs';
+export * from './link-button.mjs';

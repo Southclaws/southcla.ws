@@ -1,2 +1,2 @@
 /* eslint-disable */
-export * from './link';
+export * from './link-button';
