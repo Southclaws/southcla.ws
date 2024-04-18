@@ -121,6 +121,10 @@
     text-decoration: underline;
   }
 
+  .typography a {
+    font-weight: var(--font-weights-bold);
+  }
+
   ul {
     margin-left: 1rem;
     list-style-type: square;
@@ -167,7 +171,7 @@
   }
 
   aside p {
-    color: var(--colors-accent);
+    color: var(--colors-fg);
     font-weight: var(--font-weights-semibold);
   }
 
