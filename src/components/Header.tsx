@@ -1,8 +1,15 @@
-import { styled } from "@/styled-system/jsx";
-
 import { css } from "@/styled-system/css";
-import { hstack } from "@/styled-system/patterns";
+import { styled } from "@/styled-system/jsx";
 import Link from "next/link";
+
+const HeaderRow = styled("header", {
+  base: {
+    width: "full",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+});
 
 const Title = styled("h1", {
   base: {
@@ -32,11 +39,7 @@ const HeaderGroup = styled("hgroup", {
 
 export function Header() {
   return (
-    <styled.header
-      className={hstack({
-        justify: "space-between",
-      })}
-    >
+    <HeaderRow>
       <HeaderGroup>
         <Title>
           <Link className={homeAnchor} href="/" title="Home page">
@@ -56,6 +59,6 @@ export function Header() {
           </a>
         </styled.p>
       </HeaderGroup>
-    </styled.header>
+    </HeaderRow>
   );
 }
