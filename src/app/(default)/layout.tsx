@@ -40,9 +40,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <styled.h1 fontSize="header" color="fg" lineHeight="headerGroup">
                 southclaws
               </styled.h1>
-              <styled.p ml="0.5" color="fg.muted">
-                barnaby keene •{" "}
-                <a href="https://twitter.com/southclaws">@southclaws</a>
+              <styled.p ml="0.5" mb="0" color="fg.muted">
+                <a href="https://www.linkedin.com/in/southclaws/">
+                  barnaby keene
+                </a>{" "}
+                • <a href="https://twitter.com/southclaws">@southclaws</a>
               </styled.p>
             </HeaderGroup>
           </header>
