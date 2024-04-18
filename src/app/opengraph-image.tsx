@@ -43,7 +43,8 @@ export default async function Image() {
         >
           <h1 style={{ fontSize: "120", fontWeight: 800 }}>barney</h1>
           <p style={{ fontSize: "80", fontWeight: 400 }}>
-            multidisciplinary maker
+            multidisciplinary maker writing about design, code and the stuff in
+            between.
           </p>
         </div>
 
