@@ -1840,7 +1840,7 @@ const tokens = {
     "variable": "var(--fonts-ui)"
   },
   "fontSizes.header": {
-    "value": "clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem)",
+    "value": "clamp(1.1rem, var(--font-scale), 3.12rem)",
     "variable": "var(--font-sizes-header)"
   },
   "fontSizes.heading1": {
@@ -1955,9 +1955,17 @@ const tokens = {
     "value": "clamp(var(--spacing-4), 4vw, var(--spacing-96))",
     "variable": "var(--spacing-md-fluid)"
   },
+  "spacing.headerGroup": {
+    "value": "clamp(0px, calc(1rem - 2vw), 0.5rem)",
+    "variable": "var(--spacing-header-group)"
+  },
   "lineHeights.headingFluid": {
     "value": "calc(130px - clamp(0px, 6vw, 70px))",
     "variable": "var(--line-heights-heading-fluid)"
+  },
+  "lineHeights.headerGroup": {
+    "value": "0.6",
+    "variable": "var(--line-heights-header-group)"
   },
   "colors.offwhite": {
     "value": "var(--colors-offwhite-800)",
@@ -2146,6 +2154,10 @@ const tokens = {
   "spacing.md.-fluid": {
     "value": "calc(var(--spacing-md-fluid) * -1)",
     "variable": "var(--spacing-md-fluid)"
+  },
+  "spacing.-headerGroup": {
+    "value": "calc(var(--spacing-header-group) * -1)",
+    "variable": "var(--spacing-header-group)"
   },
   "colors.colorPalette": {
     "value": "var(--colors-color-palette)",

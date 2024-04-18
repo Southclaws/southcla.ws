@@ -14,7 +14,7 @@
     "date-fns": "^3.6.0",
     "glob": "^10.3.12",
     "hast-util-to-html": "^9.0.1",
-    "next": "14.2.0",
+    "next": "14.2.2",
     "next-mdx-remote": "^4.4.1",
     "open-graph-scraper-lite": "^2.0.0",
     "rampensau": "^0.11.0",
@@ -27,10 +27,10 @@
   "devDependencies": {
     "@pandacss/dev": "^0.37.2",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.77",
+    "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "eslint": "^9.0.0",
-    "eslint-config-next": "14.2.0",
+    "eslint-config-next": "14.2.2",
     "typescript": "^5.4.5"
   }
 }

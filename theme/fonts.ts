@@ -6,7 +6,7 @@ export const fonts = {
 
 export const fontSizes = {
   header: {
-    value: "clamp(var(--font-sizes-heading1-min), var(--font-scale), 5.61rem)",
+    value: "clamp(1.1rem, var(--font-scale), 3.12rem)",
   },
   heading1: {
     DEFAULT: { value: "2rem" },

@@ -1,7 +1,17 @@
 import { Box, VStack, styled } from "@/styled-system/jsx";
 
-import "../code-light.css";
 import "../code-dark.css";
+import "../code-light.css";
+
+const HeaderGroup = styled("hgroup", {
+  base: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "start",
+    gap: "headerGroup",
+    mb: { base: "8", md: "4" },
+  },
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,14 +36,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       >
         <VStack alignItems="start">
           <header>
-            <styled.hgroup mb={{ base: "8", md: "4" }}>
-              <styled.h1 fontSize="header" color="fg">
+            <HeaderGroup>
+              <styled.h1 fontSize="header" color="fg" lineHeight="headerGroup">
                 southclaws
               </styled.h1>
               <styled.p ml="0.5" color="fg.muted">
-                barnaby keene • @southclaws
+                barnaby keene •{" "}
+                <a href="https://twitter.com/southclaws">@southclaws</a>
               </styled.p>
-            </styled.hgroup>
+            </HeaderGroup>
           </header>
 
           <styled.main w="full">{children}</styled.main>

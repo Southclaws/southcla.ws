@@ -13,9 +13,11 @@ export const semanticTokens = defineSemanticTokens({
       DEFAULT: { value: "{spacing.4}" },
       fluid: { value: "clamp(var(--spacing-4), 4vw, var(--spacing-96))" },
     },
+    headerGroup: { value: "clamp(0px, calc(1rem - 2vw), 0.5rem)" },
   },
   lineHeights: {
     headingFluid: { value: "calc(130px - clamp(0px, 6vw, 70px))" },
+    headerGroup: { value: "0.6" },
   },
   colors: {
     offwhite: {
