@@ -1,5 +1,5 @@
 import { getContent } from "@/content/content";
-import { VStack } from "@/styled-system/jsx";
+import { VStack, styled } from "@/styled-system/jsx";
 import { formatDistanceToNow } from "date-fns";
 import { notFound } from "next/navigation";
 
@@ -34,7 +34,7 @@ export default async function Page(props: Props) {
     return (
       <VStack className="typography" w="full" alignItems="start">
         <VStack w="full" alignItems="start" gap="1" pb="6">
-          <h1>{metadata.title}</h1>
+          <styled.h1 textWrap="balance">{metadata.title}</styled.h1>
 
           <aside>
             <p>{metadata.subtitle}</p>
