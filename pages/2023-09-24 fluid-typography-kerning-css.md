@@ -6,7 +6,7 @@ hero: /images/southclaws_purple_and_blue_mountain_scenery_behind_the_screen_i_31
 
 ![2024-04-06-18-45-54](/images/2024-04-06-18-45-54.png)
 
-a photo of me inspecting typography during a design review
+> a photo of me inspecting typography during a design review
 
 There’s a special place in my heart for typography, it’s my favourite area of design. Signs, posters, magazine covers, books, movie intros, typography is everywhere. But I don’t work in those industries, I work in digital so there are extra considerations to think about on top of the already huge list of elements that matter when it comes to typesetting on the web.
 
