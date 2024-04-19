@@ -1,0 +1,48 @@
+.article {
+  display: grid;
+  grid-template-columns: 1fr 3fr 30%;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.text {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+
+  padding: var(--spacing-2);
+  z-index: 10;
+}
+
+.media {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+
+  max-height: 100%;
+  z-index: 5;
+  contain: size;
+}
+
+.media img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.mediaBackdrop {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+
+  max-height: 100%;
+  z-index: 2;
+  contain: size;
+  opacity: 0.125;
+  filter: blur(64px);
+}
+
+.mediaBackdrop img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}

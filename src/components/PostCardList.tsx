@@ -13,7 +13,7 @@ export function PostCardList({ posts }: Props) {
       margin="0"
       display="flex"
       flexDir="column"
-      gap="2"
+      gap="4"
     >
       {posts.map((v) => (
         <styled.li key={v.slug} margin="0">
