@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "barney's tech blog",
   description:
     "I'm a multidisciplinary maker. this site is a never-ending exploration into the details. aka southclaws.",
-  metadataBase: new URL(config.NEXT_PUBLIC_VERCEL_URL),
+  metadataBase: new URL(config.baseURL),
 };
 
 console.log("using base url", metadata.metadataBase?.toString());

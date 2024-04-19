@@ -1,7 +1,7 @@
 import config from "@/config";
 import type { Metadata } from "./content";
 
-const baseURL = config.NEXT_PUBLIC_VERCEL_URL;
+const { baseURL } = config;
 
 export async function getPostMetadata(slug: string): Promise<Metadata> {
   const response = await fetch(`${baseURL}/meta?slug=${slug}`);

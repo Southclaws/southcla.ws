@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const ConfigSchema = z.object({
-  NEXT_PUBLIC_VERCEL_URL: z
+  baseURL: z
     .string()
     .optional()
     .default("localhost:3000")
@@ -9,6 +9,8 @@ const ConfigSchema = z.object({
 });
 type Config = z.infer<typeof ConfigSchema>;
 
-const config: Config = ConfigSchema.parse(process.env);
+const config: Config = ConfigSchema.parse({
+  baseURL: process.env.NEXT_PUBLIC_VERCEL_URL,
+});
 
 export default config;
