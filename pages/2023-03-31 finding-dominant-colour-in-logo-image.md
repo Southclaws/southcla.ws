@@ -1,6 +1,7 @@
 ---
 title: "Finding the dominant colour in logo images: the why and the how"
 subtitle: Figure out the accent colour so your customer doesn't need to worry about it!
+hero: "/images/dominant colour cover.png"
 ---
 
 There are two parameters for the visual experience to balance when building a social platform: how much control over the overall design and how complex that control is. In this post, I’m going to show you how my team found this balance and implemented a simple solution.

@@ -1,6 +1,7 @@
 ---
 title: Migrating from Chakra UI to Panda CSS
 subtitle: How to migrate from Chakra UI to Panda CSS with Next.js and React Server Components with server side rendering for the best SEO and page load speed.
+hero: /images/chakra-to-panda.png
 ---
 
 In this article I'll be covering the motivations behind why I'm adopting Panda CSS for my frontend work, how it compares to Chakra UI, and how you can migrate from Chakra UI to Panda CSS gradually as well as what kind of work is required to maintain both in the same codebase for a period of time.
