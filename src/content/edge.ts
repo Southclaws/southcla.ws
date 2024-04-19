@@ -1,13 +1,14 @@
+import config from "@/config";
 import type { Metadata } from "./content";
 
-const URL = process.env["NEXT_PUBLIC_VERCEL_URL"] ?? "http://localhost:3000";
+const baseURL = config.NEXT_PUBLIC_VERCEL_URL;
 
 export async function getPostMetadata(slug: string): Promise<Metadata> {
-  const response = await fetch(`${URL}/meta?slug=${slug}`);
+  const response = await fetch(`${baseURL}/meta?slug=${slug}`);
   const metadata = (await response.json()) as Metadata;
 
   return {
     ...metadata,
-    hero: metadata.hero ? `${URL}${metadata.hero}` : undefined,
+    hero: metadata.hero ? `${baseURL}${metadata.hero}` : undefined,
   };
 }
