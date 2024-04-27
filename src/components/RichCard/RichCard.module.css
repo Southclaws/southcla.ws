@@ -18,6 +18,8 @@
   grid-row: 1 / 2;
 
   max-height: 100%;
+  min-height: 7rem;
+  min-height: 5lh;
   z-index: 5;
   contain: size;
 }

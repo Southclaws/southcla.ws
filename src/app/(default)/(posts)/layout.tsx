@@ -7,7 +7,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       display="flex"
       flexDir="column"
       w="full"
-      overflow="hidden"
     >
       {children}
 
