@@ -14,8 +14,6 @@ export default async function Home() {
       <p>this site is a never-ending exploration into the details.</p>
 
       <styled.nav display="flex" flexDir="column" gap="4" my="4">
-        <styled.h2 fontSize="heading2">My internet presence</styled.h2>
-
         <styled.ul
           listStyle="none"
           margin="0"
@@ -39,7 +37,7 @@ export default async function Home() {
           </styled.li>
         </styled.ul>
 
-        <styled.h2 fontSize="heading2">My technical writings</styled.h2>
+        <styled.h2 fontSize="heading2">Posts</styled.h2>
         <p>
           these are articles I've written on technical subjects, I mostly cover
           web technologies and how design intertwines with our tools.
