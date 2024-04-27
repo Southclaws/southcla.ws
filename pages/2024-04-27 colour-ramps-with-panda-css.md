@@ -1,7 +1,7 @@
 ---
 title: Colour Ramps with Panda CSS
 subtitle: Creating beautiful static CSS colour ramps automatically at build time with Panda CSS and Rampensau.
-hero: "/images/Swatches Orange to Blue.webp"
+hero: "/images/colour-swatches.png"
 ---
 
 Tailwind, Chakra, Panda, all these frameworks and more all come with colour tokens structured with a colour name and a number usually ranging from around 50 to 900 in increments of 100.
