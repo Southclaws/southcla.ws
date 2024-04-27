@@ -1,6 +1,7 @@
 "use server";
 
 import { LinkCard } from "@/components/LinkCard/LinkCard";
+import { Media } from "@/components/Media";
 import { toHtml } from "hast-util-to-html";
 import type { MDXComponents } from "mdx/types";
 import ogs from "open-graph-scraper-lite";
@@ -46,6 +47,7 @@ export async function useMDXComponents(
     },
     a: (props) => <a target="_blank" {...props} />,
     code: (props) => <code>{props.children}</code>,
+    img: (props) => <Media {...props} />,
     p: async (props) => {
       try {
         if (React.Children.count(props.children) === 1) {
