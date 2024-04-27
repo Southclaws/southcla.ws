@@ -2,8 +2,15 @@ import { VStack, styled } from "@/styled-system/jsx";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 
+const ALIGNMENT_MAPPING = {
+  left: "start",
+  center: "center",
+  right: "end",
+} as const;
+
 const ImageOptionSchema = z.object({
   size: z.enum(["small", "full"]).default("full"),
+  align: z.enum(["left", "right", "center"]).default("center"),
   caption: z
     .string()
     .optional()
@@ -19,9 +26,10 @@ export function Media({ alt, ...props }: any) {
   const id = `image-caption-${randomUUID()}`;
   const options = getExtendedAttributes(alt);
   const full = options.size === "full";
+  const align = ALIGNMENT_MAPPING[options.align];
 
   return (
-    <VStack>
+    <VStack w="full" alignItems={align}>
       <styled.img
         borderRadius="xl"
         boxShadow="md"
@@ -45,6 +53,7 @@ function getExtendedAttributes(alt: string): ImageOptions {
   if (params == null)
     return {
       size: "full",
+      align: "center",
       caption: alt,
     };
 
