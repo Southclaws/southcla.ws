@@ -2,7 +2,7 @@
   "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
   "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
   "markdown.copyFiles.destination": {
-    "**": "public/${documentBaseName}/image.png"
+    "**": "public/${documentBaseName}/${fileName}"
   },
   "pasteImage.path": "${projectRoot}/public/images",
   "pasteImage.insertPattern": "![${imageFileNameWithoutExt}](/images/${imageFileName})"
