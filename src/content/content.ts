@@ -1,5 +1,6 @@
 import { readFile } from "fs/promises";
 import { glob } from "glob";
+import type { MDXComponents } from "mdx/types";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 import { cwd } from "process";
@@ -26,7 +27,10 @@ export const FrontmatterSchema = z.object({
 });
 export type Frontmatter = z.infer<typeof FrontmatterSchema>;
 
-export async function getContent(slug: string): Promise<Post> {
+export async function getContent(
+  slug: string,
+  components: MDXComponents = {}
+): Promise<Post> {
   const root = path.join(cwd(), "pages");
   const filenamePattern = `* ${slug}.md`;
   const filepathPattern = path.join(root, filenamePattern);
@@ -50,7 +54,7 @@ export async function getContent(slug: string): Promise<Post> {
     options: {
       parseFrontmatter: true,
     },
-    components: await useMDXComponents({}),
+    components: await useMDXComponents(components),
   });
 
   const postmeta = FrontmatterSchema.parse(frontmatter);
