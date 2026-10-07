@@ -48,7 +48,7 @@ export function Media({ alt, ...props }: any) {
   );
 }
 
-function getExtendedAttributes(alt: string): ImageOptions {
+export function getExtendedAttributes(alt: string): ImageOptions {
   const params = Object.fromEntries(new URLSearchParams(alt).entries());
   if (params == null)
     return {
