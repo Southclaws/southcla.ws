@@ -4,6 +4,8 @@ import { getPosts } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
 import { Career } from "../../misc/Career";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const posts = await getPosts();
 
