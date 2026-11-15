@@ -1,5 +1,4 @@
-// NOTE: types do not work for this package, despite being written in TS...
-const { generateColorRamp, colorToCSS } = require("rampensau");
+import { colorUtils, generateColorRamp } from "rampensau";
 
 export type Options = {
   hCycles: number;
@@ -21,7 +20,7 @@ export function ramp(
     maxSaturation,
   }: Options
 ) {
-  const colours: [number, number, number][] = generateColorRamp({
+  const colours = generateColorRamp({
     total: 10,
 
     hStart,
@@ -42,7 +41,7 @@ export function ramp(
     return [
       `${index}`,
       {
-        value: colorToCSS(color, "hsl"),
+        value: colorUtils.colorToCSS(color, "hsl"),
       },
     ];
   });

@@ -4,7 +4,9 @@ import { getPosts } from "@/content/content";
 import { styled } from "@/styled-system/jsx";
 import { Career } from "../../misc/Career";
 
-export const dynamic = "force-dynamic";
+// Rendered on the server and refreshed in the background at most hourly so
+// the relative post dates stay current without rendering on every request.
+export const revalidate = 3600;
 
 export default async function Home() {
   const posts = await getPosts();
@@ -41,7 +43,7 @@ export default async function Home() {
 
         <styled.h2 fontSize="heading2">Posts</styled.h2>
         <p>
-          these are articles I've written on technical subjects, I mostly cover
+          these are articles I&apos;ve written on technical subjects, I mostly cover
           web technologies and how design intertwines with our tools.
         </p>
 

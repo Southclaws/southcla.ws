@@ -1,9 +1,10 @@
+import { css } from "@/styled-system/css";
 import { Box, styled } from "@/styled-system/jsx";
 import { formatDistanceToNow } from "date-fns";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 
 import styles from "./RichCard.module.css";
-import { css } from "@/styled-system/css";
 
 export type RichCardProps = {
   url: string;
@@ -22,6 +23,29 @@ const Article = styled("article", {
   },
 });
 
+// The card image is decorative (the title and description carry the meaning).
+// Local images go through next/image; link previews from arbitrary third-party
+// sites are lazy loaded as-is.
+function CardImage({ image }: { image: string }) {
+  if (image.startsWith("/")) {
+    return (
+      <Image src={image} alt="" fill sizes="(min-width: 768px) 240px, 30vw" />
+    );
+  }
+
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={image} alt="" loading="lazy" decoding="async" />;
+}
+
+// A tiny rendition is plenty for the heavily blurred backdrop, and as a CSS
+// background it stays out of the accessibility tree.
+function backdropURL(image: string) {
+  if (!image.startsWith("/")) return image;
+
+  return getImageProps({ src: image, alt: "", width: 64, height: 64 }).props
+    .src;
+}
+
 export async function RichCard({
   url,
   title,
@@ -31,9 +55,16 @@ export async function RichCard({
 }: RichCardProps) {
   return (
     <Article className={styles.article}>
-      <Box className={styles.media}>{image && <img src={image} />}</Box>
+      <Box className={styles.media}>{image && <CardImage image={image} />}</Box>
 
-      <Box className={styles.mediaBackdrop}>{image && <img src={image} />}</Box>
+      <Box
+        className={styles.mediaBackdrop}
+        style={
+          image
+            ? { backgroundImage: `url(${JSON.stringify(backdropURL(image))})` }
+            : undefined
+        }
+      />
 
       <Box className={styles.text}>
         <styled.h1 fontSize="lg">
@@ -43,7 +74,9 @@ export async function RichCard({
         </styled.h1>
 
         {timestamp && (
-          <time>{formatDistanceToNow(timestamp, { addSuffix: true })}</time>
+          <time dateTime={timestamp.toISOString()}>
+            {formatDistanceToNow(timestamp, { addSuffix: true })}
+          </time>
         )}
 
         <styled.p m="0" lineClamp={2}>
