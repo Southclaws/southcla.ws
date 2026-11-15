@@ -35,7 +35,6 @@ function CardImage({ image }: { image: string }) {
     );
   }
 
-  // eslint-disable-next-line @next/next/no-img-element
   return <img src={image} alt="" loading="lazy" decoding="async" />;
 }
 
