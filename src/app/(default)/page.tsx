@@ -28,6 +28,7 @@ export default async function Home() {
           <styled.li margin="0">
             <LinkCard
               url="https://barney.is"
+              heading="h2"
               title="My home page and collection of work"
               description="If you're interested in working with me, come on over."
             />
@@ -36,6 +37,7 @@ export default async function Home() {
           <styled.li margin="0">
             <LinkCard
               url="https://blog.barney.is"
+              heading="h2"
               title="My once-in-a-blue-moon newsletter"
             />
           </styled.li>
@@ -43,8 +45,8 @@ export default async function Home() {
 
         <styled.h2 fontSize="heading2">Posts</styled.h2>
         <p>
-          these are articles I&apos;ve written on technical subjects, I mostly cover
-          web technologies and how design intertwines with our tools.
+          these are articles I&apos;ve written on technical subjects, I mostly
+          cover web technologies and how design intertwines with our tools.
         </p>
 
         <PostCardList posts={posts} />

@@ -21,6 +21,8 @@ const allLanguages = Object.fromEntries(
 export async function getMDXComponents(
   components: MDXComponents,
 ): Promise<MDXComponents> {
+  let images = 0;
+
   return {
     pre: ({ children, ...props }) => {
       const childProps = children as ReactElement<{
@@ -50,7 +52,11 @@ export async function getMDXComponents(
     a: (props) => <a target="_blank" {...props} />,
     code: (props) => <code>{props.children}</code>,
     img: ({ src, alt }) => (
-      <Media src={typeof src === "string" ? src : undefined} alt={alt} />
+      <Media
+        src={typeof src === "string" ? src : undefined}
+        alt={alt}
+        eager={images++ === 0}
+      />
     ),
     p: async (props) => {
       // Images render as block-level figures, which are not allowed inside a
@@ -68,7 +74,7 @@ export async function getMDXComponents(
 
           const parsed = new URL(s);
 
-          return <LinkCard url={parsed.href} />;
+          return <LinkCard url={parsed.href} heading="p" />;
         }
       } catch {}
 

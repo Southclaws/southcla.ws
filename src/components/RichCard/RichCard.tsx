@@ -8,6 +8,8 @@ import styles from "./RichCard.module.css";
 
 export type RichCardProps = {
   url: string;
+  // The title's element, so cards fit the surrounding heading outline.
+  heading?: "h2" | "h3" | "p";
   title?: string;
   description?: string;
   timestamp?: Date;
@@ -46,8 +48,19 @@ function backdropURL(image: string) {
     .src;
 }
 
+// Same look whichever element the title is rendered as.
+const titleStyle = css({
+  fontFamily: "heading",
+  fontSize: "lg",
+  fontWeight: "black",
+  lineHeight: "tight",
+  textWrap: "balance",
+  margin: "0",
+});
+
 export async function RichCard({
   url,
+  heading: Heading = "p",
   title,
   description,
   timestamp,
@@ -67,11 +80,11 @@ export async function RichCard({
       />
 
       <Box className={styles.text}>
-        <styled.h1 fontSize="lg">
+        <Heading className={titleStyle} data-card-title="">
           <Link className={css({ lineClamp: 2 })} href={url}>
             {title ?? url}
           </Link>
-        </styled.h1>
+        </Heading>
 
         {timestamp && (
           <time dateTime={timestamp.toISOString()}>

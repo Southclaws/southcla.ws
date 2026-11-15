@@ -104,7 +104,7 @@ But if you run a colour picker over the image, not every pixel is equal. This is
 
 ![](/images/https___substack-post-media.s3.amazonaws.com_public_images_d5908e7e-aad7-4a68-8133-432248930eac_628x592.gif)
 
-The actual reason why this happens with formats like PNG is out of scope for this post, but Colin McAnlis has written a pretty nice post on the topic [here](https://medium.com/@duhroach/how-png-works-f1174e3cc7b7).
+The actual reason why this happens with formats like PNG is out of scope for this post, but Colin McAnlis has written [a pretty nice post on how PNG works](https://medium.com/@duhroach/how-png-works-f1174e3cc7b7).
 
 Solving this is fairly simple though. The goal is to “snap” the pixel values to some nearby values so that colours that are only slightly different are considered equal in our hash table and thus contribute to the same bucket.
 

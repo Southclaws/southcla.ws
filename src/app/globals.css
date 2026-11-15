@@ -130,13 +130,13 @@
   }
 
   /* Links inside running text need a non-colour cue (WCAG 1.4.1). */
-  :is(p, li, dd, blockquote):not(header *) > a {
+  :is(p, li, dd, blockquote):not(header *, [data-card-title]) > a {
     text-decoration: underline;
     text-decoration-thickness: from-font;
     text-underline-offset: 0.15em;
     text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
   }
-  :is(p, li, dd, blockquote):not(header *) > a:hover {
+  :is(p, li, dd, blockquote):not(header *, [data-card-title]) > a:hover {
     text-decoration-color: currentColor;
   }
 

@@ -33,9 +33,12 @@ const mediaImage = css({ borderRadius: "xl", boxShadow: "md", height: "auto" });
 const fullWidth = css({ maxW: "full" });
 const halfWidth = css({ maxW: "1/2" });
 
-// Markdown sometimes references files by their filesystem path in public/.
+// Markdown sometimes references files by their filesystem path in public/,
+// or relative to the post (posts are served from the site root).
 export function publicPath(src: string) {
-  return src.replace(/^(?:\.\/)?public\//, "/");
+  const path = src.replace(/^(?:\.\/)?public\//, "/");
+  if (/^[a-z][a-z\d+.-]*:/i.test(path) || path.startsWith("/")) return path;
+  return "/" + path.replace(/^\.\//, "");
 }
 
 async function measure(src: string) {
@@ -47,22 +50,33 @@ async function measure(src: string) {
   }
 }
 
-export async function Media({ alt = "", src }: { alt?: string; src?: string }) {
+export async function Media({
+  alt = "",
+  src,
+  eager,
+}: {
+  alt?: string;
+  src?: string;
+  // The first image of a post may be the LCP element.
+  eager?: boolean;
+}) {
   const options = getExtendedAttributes(alt);
   const url = publicPath(src ?? "");
   const size = url.startsWith("/") ? await measure(url) : undefined;
 
-  return <MediaFigure options={options} src={url} size={size} />;
+  return <MediaFigure options={options} src={url} size={size} eager={eager} />;
 }
 
 function MediaFigure({
   options,
   src,
   size,
+  eager,
 }: {
   options: ImageOptions;
   src: string;
   size?: { width: number; height: number };
+  eager?: boolean;
 }) {
   const id = useId();
   const full = options.size === "full";
@@ -80,6 +94,9 @@ function MediaFigure({
           {...image}
           width={size.width}
           height={size.height}
+          {...(eager
+            ? { loading: "eager" as const, fetchPriority: "high" as const }
+            : {})}
           sizes={
             full
               ? "(min-width: 768px) 736px, 100vw"
