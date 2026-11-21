@@ -54,7 +54,7 @@ Turns out you can apply this concept to any property that accepts pixels as a un
 
 I’ve been designing and building a new home page for myself recently, since my old one was built before I even did any design work (back in the days I was a Linux server admin) and it’s pretty boring.
 
-Earlier in the year I came across this really nice pair of OFL typefaces designed for the Taiwan Space Agency called TASA Orbiter and TASA Explorer. Check them out [here](https://github.com/adrianzwz/TASA-Typeface-Collection/)! So I decided to use them for my personal site.
+Earlier in the year I came across this really nice pair of OFL typefaces designed for the Taiwan Space Agency called TASA Orbiter and TASA Explorer. Check out [the TASA Typeface Collection](https://github.com/adrianzwz/TASA-Typeface-Collection/)! So I decided to use them for my personal site.
 
 One thing I do a lot when designing a marketing site, landing page or even a wordmark is mess with the kerning to get things balanced. Most well designed typefaces have decent kerning but not every single letter pair will be perfectly balanced so it’s always worth experimenting. I only made one adjustment to my heading and that was to bring the K and E ever so slightly closer just to tighten up the perceived gap between the letters.
 

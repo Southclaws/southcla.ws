@@ -1,28 +1,16 @@
-/* eslint-disable */
-import type { ConditionalValue } from '../types/index';
-import type { DistributiveOmit, Pretty } from '../types/system-types';
+import type { ConditionalValue } from '../types/system';
+import type { ConfigRecipeRuntimeFn, RecipeVariantMap } from '../types/recipe';
 
-interface LinkButtonVariant {
-  variant: "outline"
-}
-
-type LinkButtonVariantMap = {
-  [key in keyof LinkButtonVariant]: Array<LinkButtonVariant[key]>
+export type LinkButtonVariant = {
+  variant?: "outline"
 }
 
 export type LinkButtonVariantProps = {
-  [key in keyof LinkButtonVariant]?: ConditionalValue<LinkButtonVariant[key]> | undefined
+  [K in keyof LinkButtonVariant]?: ConditionalValue<LinkButtonVariant[K]>
 }
 
-export interface LinkButtonRecipe {
-  __type: LinkButtonVariantProps
-  (props?: LinkButtonVariantProps): string
-  raw: (props?: LinkButtonVariantProps) => LinkButtonVariantProps
-  variantMap: LinkButtonVariantMap
-  variantKeys: Array<keyof LinkButtonVariant>
-  splitVariantProps<Props extends LinkButtonVariantProps>(props: Props): [LinkButtonVariantProps, Pretty<DistributiveOmit<Props, keyof LinkButtonVariantProps>>]
-  getVariantProps: (props?: LinkButtonVariantProps) => LinkButtonVariantProps
-}
+export type LinkButtonVariantMap = RecipeVariantMap<LinkButtonVariant>
 
+export type LinkButtonRecipe = ConfigRecipeRuntimeFn<LinkButtonVariantProps, LinkButtonVariantMap>
 
-export declare const linkButton: LinkButtonRecipe
+export declare const linkButton: LinkButtonRecipe;

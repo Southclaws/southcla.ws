@@ -1,5 +1,10 @@
+import { css, cx } from "@/styled-system/css";
 import { VStack, styled } from "@/styled-system/jsx";
-import { randomUUID } from "crypto";
+import Image from "next/image";
+import { createReadStream } from "node:fs";
+import path from "node:path";
+import probe from "probe-image-size";
+import { useId } from "react";
 import { z } from "zod";
 
 const ALIGNMENT_MAPPING = {
@@ -17,27 +22,90 @@ const ImageOptionSchema = z.object({
     .transform(
       (s) =>
         s && // cheeky hack to get escaped quotes and quote removal for free!
-        JSON.parse(s)
+        (JSON.parse(s) as string),
     ),
+  // Plain markdown alt text, when the alt isn't using the options syntax.
+  alt: z.string().optional(),
 });
 type ImageOptions = z.infer<typeof ImageOptionSchema>;
 
-export function Media({ alt, ...props }: any) {
-  const id = `image-caption-${randomUUID()}`;
+const mediaImage = css({ borderRadius: "xl", boxShadow: "md", height: "auto" });
+const fullWidth = css({ maxW: "full" });
+const halfWidth = css({ maxW: "1/2" });
+
+// Markdown sometimes references files by their filesystem path in public/,
+// or relative to the post (posts are served from the site root).
+export function publicPath(src: string) {
+  const path = src.replace(/^(?:\.\/)?public\//, "/");
+  if (/^[a-z][a-z\d+.-]*:/i.test(path) || path.startsWith("/")) return path;
+  return "/" + path.replace(/^\.\//, "");
+}
+
+async function measure(src: string) {
+  try {
+    const file = path.join(process.cwd(), "public", decodeURI(src));
+    return await probe(createReadStream(file));
+  } catch {
+    return undefined;
+  }
+}
+
+export async function Media({
+  alt = "",
+  src,
+  eager,
+}: {
+  alt?: string;
+  src?: string;
+  // The first image of a post may be the LCP element.
+  eager?: boolean;
+}) {
   const options = getExtendedAttributes(alt);
+  const url = publicPath(src ?? "");
+  const size = url.startsWith("/") ? await measure(url) : undefined;
+
+  return <MediaFigure options={options} src={url} size={size} eager={eager} />;
+}
+
+function MediaFigure({
+  options,
+  src,
+  size,
+  eager,
+}: {
+  options: ImageOptions;
+  src: string;
+  size?: { width: number; height: number };
+  eager?: boolean;
+}) {
+  const id = useId();
   const full = options.size === "full";
-  const align = ALIGNMENT_MAPPING[options.align];
+  const image = {
+    src,
+    alt: options.caption ?? options.alt ?? "",
+    className: cx(mediaImage, full ? fullWidth : halfWidth),
+    "aria-describedby": options.caption ? id : undefined,
+  };
 
   return (
-    <VStack w="full" alignItems={align}>
-      <styled.img
-        borderRadius="xl"
-        boxShadow="md"
-        maxW={full ? "full" : "1/2"}
-        alt={options.caption}
-        aria-describedby={id}
-        {...props}
-      />
+    <VStack w="full" alignItems={ALIGNMENT_MAPPING[options.align]}>
+      {size ? (
+        <Image
+          {...image}
+          width={size.width}
+          height={size.height}
+          {...(eager
+            ? { loading: "eager" as const, fetchPriority: "high" as const }
+            : {})}
+          sizes={
+            full
+              ? "(min-width: 768px) 736px, 100vw"
+              : "(min-width: 768px) 368px, 50vw"
+          }
+        />
+      ) : (
+        <img {...image} alt={image.alt} loading="lazy" />
+      )}
 
       {options.caption && (
         <styled.aside id={id} color="fg.muted">
@@ -49,15 +117,12 @@ export function Media({ alt, ...props }: any) {
 }
 
 export function getExtendedAttributes(alt: string): ImageOptions {
+  // Plain alt text (no "key=value" options) is passed through as-is.
+  if (!alt.includes("=")) {
+    return { size: "full", align: "center", caption: undefined, alt };
+  }
+
   const params = Object.fromEntries(new URLSearchParams(alt).entries());
-  if (params == null)
-    return {
-      size: "full",
-      align: "center",
-      caption: alt,
-    };
 
-  const opts = ImageOptionSchema.parse(params);
-
-  return opts;
+  return ImageOptionSchema.parse(params);
 }

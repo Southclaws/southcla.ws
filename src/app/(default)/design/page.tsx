@@ -78,14 +78,14 @@ export default async function Page() {
         <h6>heading level six</h6>
         <p>
           the quick brown fox jumps over the lackadaisical zebra, yes this is
-          not an full pangram, but it's unique and that's what matters.
+          not an full pangram, but it&apos;s unique and that&apos;s what matters.
         </p>
       </article>
 
       <hr />
 
       <p>
-        I'm a bit of a typography <strong>nerd</strong>, I <em>love</em>{" "}
+        I&apos;m a bit of a typography <strong>nerd</strong>, I <em>love</em>{" "}
         typefaces and experimenting with letterforms. This is my secret
         playground for testing out the type scales for this website. The
         typeface in use is TASA Orbiter for the headings which was designed by{" "}

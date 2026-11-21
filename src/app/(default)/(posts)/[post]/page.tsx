@@ -1,59 +1,55 @@
-import { getContent } from "@/content/content";
+import { getContent, getPosts } from "@/content/content";
 import { VStack, styled } from "@/styled-system/jsx";
 import { formatDistanceToNow } from "date-fns";
-import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 type Props = {
-  params: {
+  params: Promise<{
     post: string;
-  };
+  }>;
 };
 
-export async function generateMetadata(props: Props) {
-  try {
-    const { metadata } = await getContent(props.params.post);
-    return {
-      title: `${metadata.title} | barney's tech blog`,
-      description: metadata.subtitle,
-    };
-  } catch (_) {
-    return undefined;
-  }
+// Posts are prerendered at build time and re-rendered in the background at
+// most hourly, which keeps the relative "written ... ago" dates fresh.
+export const revalidate = 3600;
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map(({ slug }) => ({ post: slug }));
+}
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const { post } = await props.params;
+  const { metadata } = await getContent(post);
+
+  return {
+    title: `${metadata.title} | barney's tech blog`,
+    description: metadata.subtitle,
+  };
 }
 
 export default async function Page(props: Props) {
-  if (props.params.post === "favicon.ico") {
-    // TODO: Figure out why Next.js isn't providing this file before running
-    // the route handler.
-    return null;
-  }
+  const { post } = await props.params;
+  const { content, metadata } = await getContent(post);
 
-  try {
-    const { content, metadata } = await getContent(props.params.post);
+  return (
+    <VStack className="typography" w="full" alignItems="start">
+      <VStack w="full" alignItems="start" gap="1" pb="6">
+        <styled.h1 textWrap="balance">{metadata.title}</styled.h1>
 
-    return (
-      <VStack className="typography" w="full" alignItems="start">
-        <VStack w="full" alignItems="start" gap="1" pb="6">
-          <styled.h1 textWrap="balance">{metadata.title}</styled.h1>
+        <aside>
+          <p>{metadata.subtitle}</p>
+        </aside>
 
-          <aside>
-            <p>{metadata.subtitle}</p>
-          </aside>
+        <time dateTime={metadata.timestamp.toISOString()}>
+          written {formatDistanceToNow(metadata.timestamp, { addSuffix: true })}
+        </time>
 
-          <time>
-            written{" "}
-            {formatDistanceToNow(metadata.timestamp, { addSuffix: true })}
-          </time>
-
-          <hr />
-        </VStack>
-
-        {content}
+        <hr />
       </VStack>
-    );
-  } catch (e) {
-    console.error(e);
 
-    notFound();
-  }
+      {content}
+    </VStack>
+  );
 }

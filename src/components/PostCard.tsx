@@ -18,6 +18,7 @@ export async function PostCard({ post }: Props) {
   return (
     <RichCard
       url={`/${post.slug}`}
+      heading="h3"
       title={post.metadata.title}
       description={post.metadata.subtitle}
       timestamp={post.metadata.timestamp}

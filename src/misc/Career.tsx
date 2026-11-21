@@ -1,7 +1,5 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
 import { formatDistance, formatDistanceStrict } from "date-fns";
 import { useEffect, useState } from "react";
 
@@ -18,11 +16,14 @@ type Props = {
 export function Career({ date }: Props) {
   const [duration, setDuration] = useState(distance(date, epoch));
 
+  // One ticking interval for the lifetime of the component (previously a new
+  // interval was added on every render, piling up every 500ms).
   useEffect(() => {
-    setInterval(() => {
-      setDuration(distance(new Date(), epoch));
-    }, 500);
-  });
+    const tick = () => setDuration(distance(new Date(), epoch));
+    tick();
+    const id = setInterval(tick, 500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <p>

@@ -2,36 +2,42 @@
   "name": "southcla.ws",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "26.x"
+  },
   "scripts": {
     "dev": "next dev",
     "prepare": "panda codegen",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.2.2",
-    "date-fns": "^3.6.0",
-    "glob": "^10.3.12",
-    "hast-util-to-html": "^9.0.1",
-    "next": "14.2.2",
-    "next-mdx-remote": "^4.4.1",
-    "open-graph-scraper-lite": "^2.0.0",
-    "rampensau": "^0.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "refractor": "^4.8.1",
-    "yaml": "^2.4.1",
-    "zod": "^3.22.4"
+    "@vercel/analytics": "^2.0.1",
+    "date-fns": "^4.4.0",
+    "glob": "^14.0.6",
+    "hast-util-to-html": "^9.0.6",
+    "next": "16.4.6",
+    "next-mdx-remote": "^6.0.0",
+    "open-graph-scraper-lite": "^2.1.0",
+    "probe-image-size": "^7.5.0",
+    "rampensau": "^2.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "refractor": "^5.0.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.37.2",
-    "@types/node": "^20.12.7",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "eslint": "^9.0.0",
-    "eslint-config-next": "14.2.2",
-    "typescript": "^5.4.5"
+    "@pandacss/dev": "^2.5.0",
+    "@pandacss/preset-base": "^2.5.0",
+    "@pandacss/preset-panda": "^2.5.0",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.6.6",
+    "@types/probe-image-size": "^7.2.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.33",
+    "typescript": "^6.0.3"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "pnpm@12.18.0"
 }

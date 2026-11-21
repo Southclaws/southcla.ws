@@ -5,13 +5,17 @@
     --font-scale: 8vw;
   }
 
+  /* Only colour changes are transitioned globally: layout properties stay
+     instant (no animated reflow / layout shift). */
   * {
-    transition: all 0.2s;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity;
+    transition-duration: 0.2s;
   }
 
   html {
+    color-scheme: light dark;
     min-height: 100dvh;
-    min-height: -webkit-fill-available;
 
     background-color: var(--colors-bg);
     color: var(--colors-fg);
@@ -125,6 +129,17 @@
     font-weight: var(--font-weights-bold);
   }
 
+  /* Links inside running text need a non-colour cue (WCAG 1.4.1). */
+  :is(p, li, dd, blockquote):not(header *, [data-card-title]) > a {
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.15em;
+    text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
+  }
+  :is(p, li, dd, blockquote):not(header *, [data-card-title]) > a:hover {
+    text-decoration-color: currentColor;
+  }
+
   ul {
     margin-left: 1rem;
     list-style-type: square;
@@ -159,6 +174,14 @@
   }
   blockquote p {
     display: inline;
+  }
+
+  /* Long posts carry many large, syntax highlighted code blocks: skip their
+     layout and paint until they approach the viewport. The first block is
+     left alone as it may be visible on load. */
+  .typography pre:nth-of-type(n + 2) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 320px;
   }
 
   pre {

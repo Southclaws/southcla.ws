@@ -10,7 +10,6 @@ const offwhite =
   (styles.theme?.extend?.tokens?.colors?.offwhite as any).DEFAULT?.value ??
   "white";
 
-export const runtime = "edge";
 
 export const size = {
   width: 32,

@@ -37,7 +37,7 @@ export async function generateMetadata(props: Props) {
 }
 ```
 
-You can browse the code [here](<https://github.com/Southclaws/southcla.ws/blob/321bf7088f58b8e2fc3c4cb9dd43007afb689a78/src/app/(default)/(posts)/%5Bpost%5D/page.tsx#L12-L22>)
+You can [browse the code on GitHub](<https://github.com/Southclaws/southcla.ws/blob/321bf7088f58b8e2fc3c4cb9dd43007afb689a78/src/app/(default)/(posts)/%5Bpost%5D/page.tsx#L12-L22>)
 
 What `getContent` does is quite simple:
 

@@ -5,7 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
 import { cwd } from "process";
 import { z } from "zod";
-import { useMDXComponents } from "./mdx-components";
+import { getMDXComponents } from "./mdx-components";
 
 export type Post = PostReference & {
   content: any;
@@ -31,7 +31,7 @@ export async function getContent(
   slug: string,
   components: MDXComponents = {}
 ): Promise<Post> {
-  const root = path.join(cwd(), "pages");
+  const root = path.join(cwd(), "posts");
   const filenamePattern = `* ${slug}.md`;
   const filepathPattern = path.join(root, filenamePattern);
 
@@ -54,7 +54,7 @@ export async function getContent(
     options: {
       parseFrontmatter: true,
     },
-    components: await useMDXComponents(components),
+    components: await getMDXComponents(components),
   });
 
   const postmeta = FrontmatterSchema.parse(frontmatter);
@@ -68,7 +68,7 @@ export async function getContent(
 }
 
 export async function getPosts(): Promise<PostReference[]> {
-  const paths = await glob("./pages/*.md");
+  const paths = await glob("./posts/*.md");
 
   const posts = await Promise.all(
     paths.map(async (file) => {
